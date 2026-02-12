@@ -117,7 +117,7 @@ test.describe('todo tests', () => {
 Fixtures have a number of advantages over before/after hooks:
 - Fixtures **encapsulate** setup and teardown in the same place so it is easier to write. So if you have an after hook that tears down what was created in a before hook, consider turning them into a fixture.
 - Fixtures are **reusable** between test files - you can define them once and use them in all your tests. That's how Playwright's built-in `page` fixture works. So if you have a helper function that is used in multiple tests, consider turning it into a fixture.
-- Fixtures are **on-demand** - you can define as many fixtures as you'd like, and Playwright Test will setup only the ones needed by your test and nothing else.
+- Fixtures are **on-demand** - you can define as many fixtures as you'd like, and Playwright Test will set up only the ones needed by your test and nothing else.
 - Fixtures are **composable** - they can depend on each other to provide complex behaviors.
 - Fixtures are **flexible**. Tests can use any combination of fixtures to precisely tailor the environment to their needs, without affecting other tests.
 - Fixtures simplify **grouping**. You no longer need to wrap tests in `describe`s that set up their environment, and are free to group your tests by their meaning instead.

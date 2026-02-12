@@ -260,7 +260,7 @@ await Page
     .ClickAsync();
 ```
 
-Role locators include [buttons, checkboxes, headings, links, lists, tables, and many more](https://www.w3.org/TR/html-aria/#docconformance) and follow W3C specifications for [ARIA role](https://www.w3.org/TR/wai-aria-1.2/#roles), [ARIA attributes](https://www.w3.org/TR/wai-aria-1.2/#aria-attributes) and [accessible name](https://w3c.github.io/accname/#dfn-accessible-name). Note that many html elements like `<button>` have an [implicitly defined role](https://w3c.github.io/html-aam/#html-element-role-mappings) that is recognized by the role locator.
+Role locators include [buttons, checkboxes, headings, links, lists, tables, and many more](https://www.w3.org/TR/html-aria/#docconformance) and follow W3C specifications for [ARIA role](https://www.w3.org/TR/wai-aria-1.2/#roles), [ARIA attributes](https://www.w3.org/TR/wai-aria-1.2/#aria-attributes) and [accessible name](https://w3c.github.io/accname/#dfn-accessible-name). Note that many HTML elements like `<button>` have an [implicitly defined role](https://w3c.github.io/html-aam/#html-element-role-mappings) that is recognized by the role locator.
 
 Note that role locators **do not replace** accessibility audits and conformance tests, but rather give early feedback about the ARIA guidelines.
 
@@ -434,7 +434,7 @@ Matching by text always normalizes whitespace, even with exact match. For exampl
 :::
 
 :::note[When to use text locators]
-We recommend using text locators to find non interactive elements like `div`, `span`, `p`, etc. For interactive elements like `button`, `a`, `input`, etc. use [role locators](#locate-by-role).
+We recommend using text locators to find non-interactive elements like `div`, `span`, `p`, etc. For interactive elements like `button`, `a`, `input`, etc. use [role locators](#locate-by-role).
 :::
 
 You can also [filter by text](#filter-by-text) which can be useful when trying to find a particular item in a list.
@@ -513,7 +513,7 @@ Use this locator when your element has the `title` attribute.
 
 ### Locate by test id
 
-Testing by test ids is the most resilient way of testing as even if your text or role of the attribute changes, the test will still pass. QA's and developers should define explicit test ids and query them with [`method: Page.getByTestId`]. However testing by test ids is not user facing. If the role or text value is important to you then consider using user facing locators such as [role](#locate-by-role) and [text locators](#locate-by-text).
+Testing by test ids is the most resilient way of testing as even if your text or role of the attribute changes, the test will still pass. QA's and developers should define explicit test ids and query them with [`method: Page.getByTestId`]. However, testing by test ids is not user facing. If the role or text value is important to you then consider using user facing locators such as [role](#locate-by-role) and [text locators](#locate-by-text).
 
 For example, consider the following DOM structure.
 
@@ -579,7 +579,7 @@ playwright.selectors.set_test_id_attribute("data-pw")
 playwright.Selectors.SetTestIdAttribute("data-pw");
 ```
 
-In your html you can now use `data-pw` as your test id instead of the default `data-testid`.
+In your HTML you can now use `data-pw` as your test id instead of the default `data-testid`.
 
 ```html card
 <button data-pw="directions">Itinéraire</button>
@@ -694,7 +694,7 @@ await Page.Locator("//*[@id='tsf']/div[2]/div[1]/div[1]/div/div[2]/input").Click
 ```
 
 :::note[When to use this]
-CSS and XPath are not recommended as the DOM can often change leading to non resilient tests. Instead, try to come up with a locator that is close to how the user perceives the page such as [role locators](#locate-by-role) or [define an explicit testing contract](#locate-by-test-id) using test ids.
+CSS and XPath are not recommended as the DOM can often change leading to non-resilient tests. Instead, try to come up with a locator that is close to how the user perceives the page such as [role locators](#locate-by-role) or [define an explicit testing contract](#locate-by-test-id) using test ids.
 :::
 
 ## Locate in Shadow DOM
@@ -1016,7 +1016,7 @@ await Expect(Page
     .ToHaveCountAsync(1);
 ```
 
-The filtering locator **must be relative** to the original locator and is queried starting with the original locator match, not the document root. Therefore, the following will not work, because the filtering locator starts matching from the `<ul>` list element that is outside of the `<li>` list item matched by the original locator:
+The filtering locator **must be relative** to the original locator and is queried starting with the original locator match, not the document root. Therefore, the following will not work, because the filtering locator starts matching from the `<ul>` list element that is outside the `<li>` list item matched by the original locator:
 
 ```js
 // ✖ WRONG
@@ -1489,7 +1489,7 @@ await page
 
 #### Get by test id
 
-Use the [`method: Page.getByTestId`] method to locate an element in a list. You may need to modify the html and add a test id if you don't already have a test id.
+Use the [`method: Page.getByTestId`] method to locate an element in a list. You may need to modify the HTML and add a test id if you don't already have a test id.
 
 For example, consider the following DOM structure:
 
@@ -1776,7 +1776,7 @@ page.getByRole(AriaRole.BUTTON).count();
 await page.GetByRole(AriaRole.Button).CountAsync();
 ```
 
-You can explicitly opt-out from strictness check by telling Playwright which element to use when multiple elements match, through [`method: Locator.first`], [`method: Locator.last`], and [`method: Locator.nth`]. These methods are **not recommended** because when your page changes, Playwright may click on an element you did not intend. Instead, follow best practices above to create a locator that uniquely identifies the target element.
+You can explicitly opt out from strictness check by telling Playwright which element to use when multiple elements match, through [`method: Locator.first`], [`method: Locator.last`], and [`method: Locator.nth`]. These methods are **not recommended** because when your page changes, Playwright may click on an element you did not intend. Instead, follow best practices above to create a locator that uniquely identifies the target element.
 
 ## More Locators
 

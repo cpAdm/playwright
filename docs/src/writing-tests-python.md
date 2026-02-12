@@ -136,7 +136,7 @@ Here is the list of the most popular async assertions. Note that there are [many
 
 ### Test isolation
 
-The Playwright Pytest plugin is based on the concept of test fixtures such as the [built in page fixture](./test-runners.md), which is passed into your test. Pages are [isolated between tests due to the Browser Context](./browser-contexts), which is equivalent to a brand new browser profile, where every test gets a fresh environment, even when multiple tests run in a single Browser.
+The Playwright Pytest plugin is based on the concept of test fixtures such as the [built-in page fixture](./test-runners.md), which is passed into your test. Pages are [isolated between tests due to the Browser Context](./browser-contexts), which is equivalent to a brand-new browser profile, where every test gets a fresh environment, even when multiple tests run in a single Browser.
 
 ```python title="test_example.py"
 from playwright.sync_api import Page
@@ -160,13 +160,13 @@ from playwright.sync_api import Page, expect
 
 @pytest.fixture(scope="function", autouse=True)
 def before_each_after_each(page: Page):
-    
+
     print("before the test runs")
 
     # Go to the starting url before each test.
     page.goto("https://playwright.dev/")
     yield
-    
+
     print("after the test runs")
 
 def test_main_navigation(page: Page):

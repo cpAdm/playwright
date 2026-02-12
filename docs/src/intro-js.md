@@ -87,7 +87,7 @@ The [playwright.config](./test-configuration.md) centralizes configuration: targ
 
 ## Running the Example Test
 
-By default tests run headless in parallel across Chromium, Firefox and WebKit (configurable in [playwright.config](./test-configuration.md)). Output and aggregated results display in the terminal.
+By default, tests run headless in parallel across Chromium, Firefox and WebKit (configurable in [playwright.config](./test-configuration.md)). Output and aggregated results display in the terminal.
 
 <Tabs
   groupId="js-package-manager"

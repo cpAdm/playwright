@@ -3,7 +3,7 @@ id: test-cli
 title: "Command line"
 ---
 
-Playwright provides a powerful command line interface for running tests, generating code, debugging, and more. The most up to date list of commands and arguments available on the CLI can always be retrieved via `npx playwright --help`.
+Playwright provides a powerful command line interface for running tests, generating code, debugging, and more. The most up-to-date list of commands and arguments available on the CLI can always be retrieved via `npx playwright --help`.
 
 ## Essential Commands
 

@@ -448,7 +448,7 @@ While Playwright can download and use the recent Chromium build, it can operate 
 Available channels are `chrome`, `msedge`, `chrome-beta`, `msedge-beta`, `chrome-dev`, `msedge-dev`, `chrome-canary`, `msedge-canary`.
 
 :::warning
-Certain Enterprise Browser Policies may impact Playwright's ability to launch and control Google Chrome and Microsoft Edge. Running in an environment with browser policies is outside of the Playwright project's scope.
+Certain Enterprise Browser Policies may impact Playwright's ability to launch and control Google Chrome and Microsoft Edge. Running in an environment with browser policies is outside the Playwright project's scope.
 :::
 
 :::warning
@@ -589,7 +589,7 @@ Note that availability of certain features, which depend heavily on the underlyi
 
 Playwright's WebKit is derived from the latest WebKit main branch sources, often before these updates are incorporated into Apple Safari and other WebKit-based browsers. This gives a lot of lead time to react on the potential browser update issues. Playwright doesn't work with the branded version of Safari since it relies on patches. Instead, you can test using the most recent WebKit build.
 
-Note that availability of certain features, which depend heavily on the underlying platform, may vary between operating systems. For example, available media codecs vary substantially between Linux, macOS and Windows. While running WebKit on Linux CI is usually the most affordable option, for the closest-to-Safari experience you should run WebKit on mac, for example if you do video playback.
+Note that availability of certain features, which depend heavily on the underlying platform, may vary between operating systems. For example, available media codecs vary substantially between Linux, macOS and Windows. While running WebKit on Linux CI is usually the most affordable option, for the closest-to-Safari experience you should run WebKit on Mac, for example if you do video playback.
 
 ## Install behind a firewall or a proxy
 
@@ -732,7 +732,7 @@ $Env:PLAYWRIGHT_DOWNLOAD_CONNECTION_TIMEOUT="120000"
 pwsh bin/Debug/netX/playwright.ps1 install
 ```
 
-If you are [installing dependencies](#install-system-dependencies) and need to use a proxy on Linux, make sure to run the command as a root user. Otherwise, Playwright will attempt to become a root and will not pass environment variables like `HTTPS_PROXY` to the linux package manager.
+If you are [installing dependencies](#install-system-dependencies) and need to use a proxy on Linux, make sure to run the command as a root user. Otherwise, Playwright will attempt to become a root and will not pass environment variables like `HTTPS_PROXY` to the Linux package manager.
 
 ```bash js
 sudo HTTPS_PROXY=https://192.0.2.1 npx playwright install-deps
@@ -1090,7 +1090,7 @@ dotnet test
 Playwright keeps track of packages that need those browsers and will garbage collect them as you update Playwright to the newer versions.
 
 :::note
-Developers can opt-in in this mode via exporting `PLAYWRIGHT_BROWSERS_PATH=$HOME/pw-browsers` in their `.bashrc`.
+Developers can opt in to this mode via exporting `PLAYWRIGHT_BROWSERS_PATH=$HOME/pw-browsers` in their `.bashrc`.
 :::
 
 ### Hermetic install

@@ -175,7 +175,7 @@ export interface Reporter {
   /**
    * Called immediately before test runner exists. At this point all the reporters have received the
    * [reporter.onEnd(result)](https://playwright.dev/docs/api/class-reporter#reporter-on-end) signal, so all the reports
-   * should be build. You can run the code that uploads the reports in this hook.
+   * should be built. You can run the code that uploads the reports in this hook.
    */
   onExit?(): Promise<void>;
 

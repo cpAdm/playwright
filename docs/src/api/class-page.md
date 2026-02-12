@@ -911,13 +911,13 @@ Browser-specific Coverage implementation. See [Coverage](./class-coverage) for m
 * langs:
   - alias-csharp: DblClickAsync
 
-This method double clicks an element matching [`param: selector`] by performing the following steps:
+This method double-clicks an element matching [`param: selector`] by performing the following steps:
 1. Find an element matching [`param: selector`]. If there is none, wait until a matching element is attached to
    the DOM.
 1. Wait for [actionability](../actionability.md) checks on the matched element, unless [`option: force`] option is
    set. If the element is detached during the checks, the whole action is retried.
 1. Scroll the element into view if needed.
-1. Use [`property: Page.mouse`] to double click in the center of the element, or the specified [`option: position`].
+1. Use [`property: Page.mouse`] to double-click in the center of the element, or the specified [`option: position`].
 
 When all steps combined have not finished during the specified [`option: timeout`], this method throws a
 [TimeoutError]. Passing zero timeout disables this.
@@ -2359,7 +2359,7 @@ Attribute name to get the value for.
 - returns: <[null]|[Response]>
 
 Returns the main resource response. In case of multiple redirects, the navigation will resolve with the response of the
-last redirect. If cannot go back, returns `null`.
+last redirect. If it cannot go back, returns `null`.
 
 Navigate to the previous page in history.
 
@@ -2377,7 +2377,7 @@ Navigate to the previous page in history.
 - returns: <[null]|[Response]>
 
 Returns the main resource response. In case of multiple redirects, the navigation will resolve with the response of the
-last redirect. If cannot go forward, returns `null`.
+last redirect. If it cannot go forward, returns `null`.
 
 Navigate to the next page in history.
 
@@ -2841,11 +2841,11 @@ This method requires Playwright to be started in a headed mode, with a falsy [`o
 
 Returns the PDF buffer.
 
-`page.pdf()` generates a pdf of the page with `print` css media. To generate a pdf with `screen` media, call
+`page.pdf()` generates a PDF of the page with `print` css media. To generate a PDF with `screen` media, call
 [`method: Page.emulateMedia`] before calling `page.pdf()`:
 
 :::note
-By default, `page.pdf()` generates a pdf with modified colors for printing. Use the
+By default, `page.pdf()` generates a PDF with modified colors for printing. Use the
 [`-webkit-print-color-adjust`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust) property to
 force rendering of exact colors.
 :::
@@ -3037,13 +3037,13 @@ size.
 * since: v1.42
 - `tagged` <[boolean]>
 
-Whether or not to generate tagged (accessible) PDF. Defaults to `false`.
+Whether to generate tagged (accessible) PDF. Defaults to `false`.
 
 ### option: Page.pdf.outline
 * since: v1.42
 - `outline` <[boolean]>
 
-Whether or not to embed the document outline into the PDF. Defaults to `false`.
+Whether to embed the document outline into the PDF. Defaults to `false`.
 
 
 ## async method: Page.press
@@ -3198,7 +3198,7 @@ Returns up to (currently) 100 last network request from this page. See [`event: 
 
 Returned requests should be accessed immediately, otherwise they might be collected to prevent unbounded memory growth as new requests come in. Once collected, retrieving most information about the request is impossible.
 
-Note that requests reported through the [`event: Page.request`] request are not collected, so there is a trade off between efficient memory usage with [`method: Page.requests`] and the amount of available information reported through [`event: Page.request`].
+Note that requests reported through the [`event: Page.request`] request are not collected, so there is a trade-off between efficient memory usage with [`method: Page.requests`] and the amount of available information reported through [`event: Page.request`].
 
 
 ## async method: Page.addLocatorHandler
@@ -3210,13 +3210,13 @@ This method lets you set up a special function, called a handler, that activates
 
 Things to keep in mind:
 * When an overlay is shown predictably, we recommend explicitly waiting for it in your test and dismissing it as a part of your normal test flow, instead of using [`method: Page.addLocatorHandler`].
-* Playwright checks for the overlay every time before executing or retrying an action that requires an [actionability check](../actionability.md), or before performing an auto-waiting assertion check. When overlay is visible, Playwright calls the handler first, and then proceeds with the action/assertion. Note that the handler is only called when you perform an action/assertion - if the overlay becomes visible but you don't perform any actions, the handler will not be triggered.
-* After executing the handler, Playwright will ensure that overlay that triggered the handler is not visible anymore. You can opt-out of this behavior with [`option: noWaitAfter`].
+* Playwright checks for the overlay every time before executing or retrying an action that requires an [actionability check](../actionability.md), or before performing an auto-waiting assertion check. When overlay is visible, Playwright calls the handler first, and then proceeds with the action/assertion. Note that the handler is only called when you perform an action/assertion - if the overlay becomes visible, but you don't perform any actions, the handler will not be triggered.
+* After executing the handler, Playwright will ensure that overlay that triggered the handler is not visible anymore. You can opt out of this behavior with [`option: noWaitAfter`].
 * The execution time of the handler counts towards the timeout of the action/assertion that executed the handler. If your handler takes too long, it might cause timeouts.
 * You can register multiple handlers. However, only a single handler will be running at a time. Make sure the actions within a handler don't depend on another handler.
 
 :::warning
-Running the handler will alter your page state mid-test. For example it will change the currently focused element and move the mouse. Make sure that actions that run after the handler are self-contained and do not rely on the focus and mouse state being unchanged.
+Running the handler will alter your page state mid-test. For example, it will change the currently focused element and move the mouse. Make sure that actions that run after the handler are self-contained and do not rely on the focus and mouse state being unchanged.
 
 For example, consider a test that calls [`method: Locator.focus`] followed by [`method: Keyboard.press`]. If your handler clicks a button between these two actions, the focused element most likely will be wrong, and key press will happen on the unexpected element. Use [`method: Locator.press`] instead to avoid this problem.
 
@@ -3716,7 +3716,7 @@ handler function to route the request.
 * since: v1.15
 - `times` <[int]>
 
-How often a route should be used. By default it will be used every time.
+How often a route should be used. By default, it will be used every time.
 
 ## async method: Page.routeFromHAR
 * since: v1.23
@@ -5487,7 +5487,7 @@ Receives the [Worker] object and resolves to truthy value when the waiting shoul
 * since: v1.8
 - returns: <[Array]<[Worker]>>
 
-This method returns all of the dedicated [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
+This method returns all the dedicated [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
 associated with the page.
 
 :::note

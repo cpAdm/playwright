@@ -191,7 +191,7 @@ public class TestGitHubAPI {
 
 ### Setup and teardown
 
-These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterwards. Use `@BeforeAll` and `@AfterAll` hooks for that.
+These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterward. Use `@BeforeAll` and `@AfterAll` hooks for that.
 
 ```java
 public class TestGitHubAPI {

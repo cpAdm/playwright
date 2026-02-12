@@ -78,7 +78,7 @@ const { _android: android } = require('playwright');
 * since: v1.28
 - returns: <[AndroidDevice]>
 
-This methods attaches Playwright to an existing Android device.
+This method attaches Playwright to an existing Android device.
 Use [`method: Android.launchServer`] to launch a new Android server instance.
 
 ### param: Android.connect.wsEndpoint

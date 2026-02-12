@@ -158,7 +158,7 @@ public class TestGitHubAPI : PlaywrightTest
 
 ### Setup and teardown
 
-These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterwards. Use `[SetUp]` and `[TearDown]` hooks for that.
+These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterward. Use `[SetUp]` and `[TearDown]` hooks for that.
 
 ```csharp
 using System.Text.Json;

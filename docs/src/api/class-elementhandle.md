@@ -249,10 +249,10 @@ Returns the content frame for element handles referencing iframe nodes, or `null
 * langs:
   - alias-csharp: DblClickAsync
 
-This method double clicks the element by performing the following steps:
+This method double-clicks the element by performing the following steps:
 1. Wait for [actionability](../actionability.md) checks on the element, unless [`option: force`] option is set.
 1. Scroll the element into view if needed.
-1. Use [`property: Page.mouse`] to double click in the center of the element, or the specified [`option: position`].
+1. Use [`property: Page.mouse`] to double-click in the center of the element, or the specified [`option: position`].
 
 If the element is detached from the DOM at any moment during the action, this method throws.
 

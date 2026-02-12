@@ -101,7 +101,7 @@ Choose a specific profile, various profiles or all profiles to run tests on.
 
 ## Configure projects for multiple environments
 
-By setting up projects we can also run a group of tests with different timeouts or retries or run a group of tests against different environments. For example we can run our tests against a staging environment with 2 retries as well as against a production environment with 0 retries.
+By setting up projects we can also run a group of tests with different timeouts or retries or run a group of tests against different environments. For example, we can run our tests against a staging environment with 2 retries as well as against a production environment with 0 retries.
 
 ```js title="playwright.config.ts"
 import { defineConfig } from '@playwright/test';
@@ -211,7 +211,7 @@ Running order:
 
 ### Teardown
 
-You can also teardown your setup by adding a [`property: TestProject.teardown`] property to your setup project. Teardown will run after all dependent projects have run. See the [teardown guide](./test-global-setup-teardown.md#teardown) for more information.
+You can also tear down your setup by adding a [`property: TestProject.teardown`] property to your setup project. Teardown will run after all dependent projects have run. See the [teardown guide](./test-global-setup-teardown.md#teardown) for more information.
 
 
 <img style={{display: 'flex', margin: 'auto'}} alt="global setup and teardown" loading="lazy" src="https://github.com/microsoft/playwright/assets/13063165/dfcf10a9-f601-4d0c-bd8d-9490e6efbf7a" />

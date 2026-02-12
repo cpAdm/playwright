@@ -98,7 +98,7 @@ Playwright can emulate various devices by specifying `setDeviceScaleFactor`, `se
 
 ## Viewport
 
-The viewport is included in the device but you can override it for some tests with [`method: Page.setViewportSize`].
+The viewport is included in the device, but you can override it for some tests with [`method: Page.setViewportSize`].
 
 ```js tab=js-test title="playwright.config.ts"
 import { defineConfig, devices } from '@playwright/test';
@@ -354,7 +354,7 @@ await using var context = await browser.NewContextAsync(new()
 });
 ```
 
-<img width="1394" alt="Bing in german lang and timezone" src="https://user-images.githubusercontent.com/13063165/220416571-ccc96ab1-44bb-4579-8430-64502fc24a15.png" />
+<img width="1394" alt="Bing in German lang and timezone" src="https://user-images.githubusercontent.com/13063165/220416571-ccc96ab1-44bb-4579-8430-64502fc24a15.png" />
 
 ######
 * langs: js
@@ -524,7 +524,7 @@ await using var context = await browser.NewContextAsync(new()
 });
 ```
 
-<img width="1394" alt="geolocation for italy on bing maps" src="https://user-images.githubusercontent.com/13063165/220417670-bb22d815-f5cd-47c4-8562-0b88165eac27.png" />
+<img width="1394" alt="geolocation for Italy on Bing maps" src="https://user-images.githubusercontent.com/13063165/220417670-bb22d815-f5cd-47c4-8562-0b88165eac27.png" />
 
 Change the location later:
 
@@ -688,7 +688,7 @@ await page.EmulateMediaAsync(new()
 <img width="1394" alt="playwright web in dark mode" src="https://user-images.githubusercontent.com/13063165/220411638-55d2b051-4678-4da7-9f0b-ed22f5a3c47c.png" />
 ## User Agent
 
-The User Agent is included in the device and therefore you  will rarely need to change it however if you do need to test a different user agent you can override it with the `userAgent` property.
+The User Agent is included in the device and therefore you will rarely need to change it however if you do need to test a different user agent you can override it with the `userAgent` property.
 
 ```js tab=js-test title="tests/example.spec.ts"
 import { test, expect } from '@playwright/test';

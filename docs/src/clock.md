@@ -17,7 +17,7 @@ The [Clock] API provides the following methods to control time:
   - `resume`: Resumes the time.
 - `setSystemTime`: Sets the current system time.
 
-The recommended approach is to use `setFixedTime` to set the time to a specific value. If that doesn't work for your use case, you can use `install` which allows you to pause time later on, fast forward it, tick it, etc. `setSystemTime` is only recommended for advanced use cases.
+The recommended approach is to use `setFixedTime` to set the time to a specific value. If that doesn't work for your use case, you can use `install` which allows you to pause time later on, fast-forward it, tick it, etc. `setSystemTime` is only recommended for advanced use cases.
 
 :::note
 [`property: Page.clock`] overrides native global classes and functions related to time allowing them to be manually controlled:
@@ -108,7 +108,7 @@ await Expect(Page.GetByTestId("current-time")).ToHaveTextAsync("2/2/2024, 10:30:
 ## Consistent time and timers
 
 Sometimes your timers depend on `Date.now` and are confused when the `Date.now` value does not change over time.
-In this case, you can install the clock and fast forward to the time of interest when testing.
+In this case, you can install the clock and fast-forward to the time of interest when testing.
 
 ```html
 <div id="current-time" data-testid="current-time"></div>

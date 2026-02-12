@@ -210,7 +210,7 @@ would be executed. Defaults to `raf`.
 * langs: csharp, java
 - `pollingInterval` <[float]>
 
-If specified, then it is treated as an interval in milliseconds at which the function would be executed. By default if the option is not specified [`param: expression`] is executed in `requestAnimationFrame` callback.
+If specified, then it is treated as an interval in milliseconds at which the function would be executed. By default, if the option is not specified [`param: expression`] is executed in `requestAnimationFrame` callback.
 
 ## browser-option-ignoredefaultargs
 * langs: js, python
@@ -334,7 +334,7 @@ When using [`method: Page.goto`], [`method: Page.route`], [`method: Page.waitFor
   - `width` <[int]> page width in pixels.
   - `height` <[int]> page height in pixels.
 
-Emulates consistent viewport for each page. Defaults to an 1280x720 viewport.
+Emulates consistent viewport for each page. Defaults to a 1280x720 viewport.
 Use `null` to disable the consistent viewport emulation. Learn more about [viewport emulation](../emulation#viewport).
 
 :::note
@@ -350,7 +350,7 @@ tests non-deterministic.
   - `width` <[int]> page width in pixels.
   - `height` <[int]> page height in pixels.
 
-Emulates consistent viewport for each page. Defaults to an 1280x720 viewport.
+Emulates consistent viewport for each page. Defaults to a 1280x720 viewport.
 Use `ViewportSize.NoViewport` to disable the consistent viewport emulation. Learn more about [viewport emulation](../emulation.md#viewport).
 
 :::note
@@ -453,14 +453,14 @@ Request timeout in milliseconds. Defaults to `30000` (30 seconds). Pass `0` to d
 * langs: js, python, csharp
 - `failOnStatusCode` <[boolean]>
 
-Whether to throw on response codes other than 2xx and 3xx. By default response object is returned
+Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned
 for all status codes.
 
 ## js-fetch-option-form
 * langs: js
 - `form` <[Object]<[string], [string]|[float]|[boolean]>|[FormData]>
 
-Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent as
+Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `application/x-www-form-urlencoded`
 unless explicitly provided.
 
@@ -468,7 +468,7 @@ unless explicitly provided.
 * langs: python
 - `form` <[Object]<[string], [string]|[float]|[boolean]>>
 
-Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent as
+Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `application/x-www-form-urlencoded`
 unless explicitly provided.
 
@@ -476,7 +476,7 @@ unless explicitly provided.
 * langs: csharp
 - `form` <[FormData]>
 
-Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent as
+Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `application/x-www-form-urlencoded`
 unless explicitly provided.
 
@@ -489,7 +489,7 @@ An instance of [FormData] can be created via [`method: APIRequestContext.createF
   - `mimeType` <[string]> File type
   - `buffer` <[Buffer]> File content
 
-Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as
+Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `multipart/form-data`
 unless explicitly provided. File values can be passed either as [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream)
 or as file-like object containing file name, mime-type and its content.
@@ -501,7 +501,7 @@ or as file-like object containing file name, mime-type and its content.
   - `mimeType` <[string]> File type
   - `buffer` <[Buffer]> File content
 
-Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as
+Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `multipart/form-data`
 unless explicitly provided. File values can be passed as file-like object containing file name, mime-type and its content.
 
@@ -509,7 +509,7 @@ unless explicitly provided. File values can be passed as file-like object contai
 * langs: csharp
 - `multipart` <[FormData]>
 
-Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as
+Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `multipart/form-data`
 unless explicitly provided. File values can be passed as file-like object containing file name, mime-type and its content.
 
@@ -519,8 +519,8 @@ An instance of [FormData] can be created via [`method: APIRequestContext.createF
 * langs: js, python, csharp
 - `data` <[string]|[Buffer]|[Serializable]>
 
-Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type` header will be
+Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type` header will be
 set to `application/octet-stream` if not explicitly set.
 
 ## js-python-csharp-fetch-option-ignorehttpserrors
@@ -584,7 +584,7 @@ Function to be evaluated in the main Electron process.
   - `width` <[int]> page width in pixels.
   - `height` <[int]> page height in pixels.
 
-Sets a consistent viewport for each page. Defaults to an 1280x720 viewport. `no_viewport` disables the fixed viewport. Learn more about [viewport emulation](../emulation.md#viewport).
+Sets a consistent viewport for each page. Defaults to a 1280x720 viewport. `no_viewport` disables the fixed viewport. Learn more about [viewport emulation](../emulation.md#viewport).
 
 ## python-context-option-no-viewport
 * langs: python
@@ -638,7 +638,7 @@ Specifies if viewport supports touch events. Defaults to false. Learn more about
 ## context-option-javascriptenabled
 - `javaScriptEnabled` <[boolean]>
 
-Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about [disabling JavaScript](../emulation.md#javascript-enabled).
+Whether to enable JavaScript in the context. Defaults to `true`. Learn more about [disabling JavaScript](../emulation.md#javascript-enabled).
 
 ## context-option-timezoneid
 - `timezoneId` <[string]>
@@ -678,7 +678,7 @@ Whether to emulate network being offline. Defaults to `false`. Learn more about 
   - `username` <[string]>
   - `password` <[string]>
   - `origin` ?<[string]> Restrain sending http credentials on specific origin (scheme://host:port).
-  - `send` ?<[HttpCredentialsSend]<"unauthorized"|"always">> This option only applies to the requests sent from corresponding [APIRequestContext] and does not affect requests sent from the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+  - `send` ?<[HttpCredentialsSend]<"unauthorized"|"always">> This option only applies to the requests sent from corresponding [APIRequestContext] and does not affect requests sent from the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
 
 Credentials for [HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
 If no origin is specified, the username and password are sent to any servers upon unauthorized responses.
@@ -1290,14 +1290,14 @@ An object which specifies clipping of the resulting image.
 ## screenshot-option-scale
 - `scale` <[ScreenshotScale]<"css"|"device">>
 
-When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so screenshots of high-dpi devices will be twice as large or even larger.
+When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so screenshots of high-dpi devices will be twice as large or even larger.
 
 Defaults to `"device"`.
 
 ## screenshot-option-scale-default-css
 - `scale` <[ScreenshotScale]<"css"|"device">>
 
-When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so screenshots of high-dpi devices will be twice as large or even larger.
+When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so screenshots of high-dpi devices will be twice as large or even larger.
 
 Defaults to `"css"`.
 
@@ -1310,13 +1310,13 @@ When set to `"hide"`, screenshot will hide text caret. When set to `"initial"`, 
 - `style` <string>
 
 Text of the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make elements invisible
-or change their properties to help you creating repeatable screenshots. This stylesheet pierces the Shadow DOM and applies
+or change their properties to help you create repeatable screenshots. This stylesheet pierces the Shadow DOM and applies
 to the inner frames.
 
 ## screenshot-option-style-path
 - `stylePath` <[string]|[Array]<[string]>>
 
-File name containing the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make elements invisible or change their properties to help you creating repeatable screenshots. This stylesheet pierces the Shadow DOM and applies to the inner frames.
+File name containing the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make elements invisible or change their properties to help you create repeatable screenshots. This stylesheet pierces the Shadow DOM and applies to the inner frames.
 
 ## screenshot-options-common-list-v1.8
 - %%-screenshot-option-animations-%%
@@ -1793,7 +1793,7 @@ await page
 
 Role selector **does not replace** accessibility audits and conformance tests, but rather gives early feedback about the ARIA guidelines.
 
-Many html elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings) that is recognized by the role selector. You can find all the [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend** duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
+Many HTML elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings) that is recognized by the role selector. You can find all the [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend** duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
 
 ## template-locator-get-by-title
 

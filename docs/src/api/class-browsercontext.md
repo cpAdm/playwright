@@ -1204,7 +1204,7 @@ handler function to route the request.
 * since: v1.15
 - `times` <[int]>
 
-How often a route should be used. By default it will be used every time.
+How often a route should be used. By default, it will be used every time.
 
 ## async method: BrowserContext.routeFromHAR
 * since: v1.23

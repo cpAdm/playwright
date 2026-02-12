@@ -2,7 +2,7 @@
 * since: v1.9
 * langs: csharp, java
 
-The [WebSocketFrame] class represents frames sent over [WebSocket] connections in the page. Frame payload is returned by either [`method: WebSocketFrame.text`] or [`method: WebSocketFrame.binary`] method depending on the its type.
+The [WebSocketFrame] class represents frames sent over [WebSocket] connections in the page. Frame payload is returned by either [`method: WebSocketFrame.text`] or [`method: WebSocketFrame.binary`] method depending on its type.
 
 ## method: WebSocketFrame.binary
 * since: v1.9

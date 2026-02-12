@@ -72,7 +72,7 @@ def test_my_app_is_working(fixture_name):
 - `browser_context_args`: Override the options for [`method: Browser.newContext`]. It should return a Dict.
 - `connect_options`: Connect to an existing browser via WebSocket endpoint. It should return a Dict with [`method: BrowserType.connect`] options.
 
-Its also possible to override the context options ([`method: Browser.newContext`]) for a single test by using the `browser_context_args` marker:
+It's also possible to override the context options ([`method: Browser.newContext`]) for a single test by using the `browser_context_args` marker:
 
 ```python
 import pytest

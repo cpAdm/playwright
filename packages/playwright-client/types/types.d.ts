@@ -1945,17 +1945,17 @@ export interface Page {
    * - Playwright checks for the overlay every time before executing or retrying an action that requires an
    *   [actionability check](https://playwright.dev/docs/actionability), or before performing an auto-waiting assertion check. When overlay
    *   is visible, Playwright calls the handler first, and then proceeds with the action/assertion. Note that the
-   *   handler is only called when you perform an action/assertion - if the overlay becomes visible but you don't
+   *   handler is only called when you perform an action/assertion - if the overlay becomes visible, but you don't
    *   perform any actions, the handler will not be triggered.
    * - After executing the handler, Playwright will ensure that overlay that triggered the handler is not visible
-   *   anymore. You can opt-out of this behavior with
+   *   anymore. You can opt out of this behavior with
    *   [`noWaitAfter`](https://playwright.dev/docs/api/class-page#page-add-locator-handler-option-no-wait-after).
    * - The execution time of the handler counts towards the timeout of the action/assertion that executed the handler.
    *   If your handler takes too long, it might cause timeouts.
    * - You can register multiple handlers. However, only a single handler will be running at a time. Make sure the
    *   actions within a handler don't depend on another handler.
    *
-   * **NOTE** Running the handler will alter your page state mid-test. For example it will change the currently focused
+   * **NOTE** Running the handler will alter your page state mid-test. For example, it will change the currently focused
    * element and move the mouse. Make sure that actions that run after the handler are self-contained and do not rely on
    * the focus and mouse state being unchanged.
    *
@@ -2398,7 +2398,7 @@ export interface Page {
    * **NOTE** Use locator-based [locator.dblclick([options])](https://playwright.dev/docs/api/class-locator#locator-dblclick)
    * instead. Read more about [locators](https://playwright.dev/docs/locators).
    *
-   * This method double clicks an element matching
+   * This method double-clicks an element matching
    * [`selector`](https://playwright.dev/docs/api/class-page#page-dblclick-option-selector) by performing the following
    * steps:
    * 1. Find an element matching
@@ -2408,7 +2408,7 @@ export interface Page {
    *    [`force`](https://playwright.dev/docs/api/class-page#page-dblclick-option-force) option is set. If the
    *    element is detached during the checks, the whole action is retried.
    * 1. Scroll the element into view if needed.
-   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double click in the center of the
+   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double-click in the center of the
    *    element, or the specified
    *    [`position`](https://playwright.dev/docs/api/class-page#page-dblclick-option-position).
    *
@@ -3018,7 +3018,7 @@ export interface Page {
    * Role selector **does not replace** accessibility audits and conformance tests, but rather gives early feedback
    * about the ARIA guidelines.
    *
-   * Many html elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
+   * Many HTML elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
    * that is recognized by the role selector. You can find all the
    * [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend**
    * duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
@@ -3217,7 +3217,7 @@ export interface Page {
 
   /**
    * Returns the main resource response. In case of multiple redirects, the navigation will resolve with the response of
-   * the last redirect. If cannot go back, returns `null`.
+   * the last redirect. If it cannot go back, returns `null`.
    *
    * Navigate to the previous page in history.
    * @param options
@@ -3247,7 +3247,7 @@ export interface Page {
 
   /**
    * Returns the main resource response. In case of multiple redirects, the navigation will resolve with the response of
-   * the last redirect. If cannot go forward, returns `null`.
+   * the last redirect. If it cannot go forward, returns `null`.
    *
    * Navigate to the next page in history.
    * @param options
@@ -3726,11 +3726,11 @@ export interface Page {
   /**
    * Returns the PDF buffer.
    *
-   * `page.pdf()` generates a pdf of the page with `print` css media. To generate a pdf with `screen` media, call
+   * `page.pdf()` generates a PDF of the page with `print` css media. To generate a PDF with `screen` media, call
    * [page.emulateMedia([options])](https://playwright.dev/docs/api/class-page#page-emulate-media) before calling
    * `page.pdf()`:
    *
-   * **NOTE** By default, `page.pdf()` generates a pdf with modified colors for printing. Use the
+   * **NOTE** By default, `page.pdf()` generates a PDF with modified colors for printing. Use the
    * [`-webkit-print-color-adjust`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust)
    * property to force rendering of exact colors.
    *
@@ -3844,7 +3844,7 @@ export interface Page {
     };
 
     /**
-     * Whether or not to embed the document outline into the PDF. Defaults to `false`.
+     * Whether to embed the document outline into the PDF. Defaults to `false`.
      */
     outline?: boolean;
 
@@ -3880,7 +3880,7 @@ export interface Page {
     scale?: number;
 
     /**
-     * Whether or not to generate tagged (accessible) PDF. Defaults to `false`.
+     * Whether to generate tagged (accessible) PDF. Defaults to `false`.
      */
     tagged?: boolean;
 
@@ -4035,7 +4035,7 @@ export interface Page {
    *
    * Note that requests reported through the
    * [page.on('request')](https://playwright.dev/docs/api/class-page#page-event-request) request are not collected, so
-   * there is a trade off between efficient memory usage with
+   * there is a trade-off between efficient memory usage with
    * [page.requests()](https://playwright.dev/docs/api/class-page#page-requests) and the amount of available information
    * reported through [page.on('request')](https://playwright.dev/docs/api/class-page#page-event-request).
    */
@@ -4112,7 +4112,7 @@ export interface Page {
    */
   route(url: string|RegExp|URLPattern|((url: URL) => boolean), handler: ((route: Route, request: Request) => Promise<any>|any), options?: {
     /**
-     * How often a route should be used. By default it will be used every time.
+     * How often a route should be used. By default, it will be used every time.
      */
     times?: number;
   }): Promise<void>;
@@ -5264,7 +5264,7 @@ export interface Page {
   }): Promise<void>;
 
   /**
-   * This method returns all of the dedicated
+   * This method returns all the dedicated
    * [WebWorkers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) associated with the page.
    *
    * **NOTE** This does not contain ServiceWorkers
@@ -6563,7 +6563,7 @@ export interface Frame {
    * **NOTE** Use locator-based [locator.dblclick([options])](https://playwright.dev/docs/api/class-locator#locator-dblclick)
    * instead. Read more about [locators](https://playwright.dev/docs/locators).
    *
-   * This method double clicks an element matching
+   * This method double-clicks an element matching
    * [`selector`](https://playwright.dev/docs/api/class-frame#frame-dblclick-option-selector) by performing the
    * following steps:
    * 1. Find an element matching
@@ -6573,7 +6573,7 @@ export interface Frame {
    *    [`force`](https://playwright.dev/docs/api/class-frame#frame-dblclick-option-force) option is set. If the
    *    element is detached during the checks, the whole action is retried.
    * 1. Scroll the element into view if needed.
-   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double click in the center of the
+   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double-click in the center of the
    *    element, or the specified
    *    [`position`](https://playwright.dev/docs/api/class-frame#frame-dblclick-option-position). if the first click
    *    of the `dblclick()` triggers a navigation event, this method will throw.
@@ -7039,7 +7039,7 @@ export interface Frame {
    * Role selector **does not replace** accessibility audits and conformance tests, but rather gives early feedback
    * about the ARIA guidelines.
    *
-   * Many html elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
+   * Many HTML elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
    * that is recognized by the role selector. You can find all the
    * [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend**
    * duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
@@ -9434,7 +9434,7 @@ export interface BrowserContext {
    */
   route(url: string|RegExp|URLPattern|((url: URL) => boolean), handler: ((route: Route, request: Request) => Promise<any>|any), options?: {
     /**
-     * How often a route should be used. By default it will be used every time.
+     * How often a route should be used. By default, it will be used every time.
      */
     times?: number;
   }): Promise<void>;
@@ -10267,9 +10267,9 @@ export interface Browser {
       /**
        * This option only applies to the requests sent from corresponding
        * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-       * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-       * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+       * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+       * header is received. Defaults to `'unauthorized'`.
        */
       send?: "unauthorized"|"always";
     };
@@ -10287,7 +10287,7 @@ export interface Browser {
     isMobile?: boolean;
 
     /**
-     * Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about
+     * Whether to enable JavaScript in the context. Defaults to `true`. Learn more about
      * [disabling JavaScript](https://playwright.dev/docs/emulation#javascript-enabled).
      */
     javaScriptEnabled?: boolean;
@@ -10544,7 +10544,7 @@ export interface Browser {
     videosPath?: string;
 
     /**
-     * Emulates consistent viewport for each page. Defaults to an 1280x720 viewport. Use `null` to disable the consistent
+     * Emulates consistent viewport for each page. Defaults to a 1280x720 viewport. Use `null` to disable the consistent
      * viewport emulation. Learn more about [viewport emulation](https://playwright.dev/docs/emulation#viewport).
      *
      * **NOTE** The `null` value opts out from the default presets, makes viewport depend on the host window size defined
@@ -11690,12 +11690,12 @@ export interface ElementHandle<T=Node> extends JSHandle<T> {
    * **NOTE** Use locator-based [locator.dblclick([options])](https://playwright.dev/docs/api/class-locator#locator-dblclick)
    * instead. Read more about [locators](https://playwright.dev/docs/locators).
    *
-   * This method double clicks the element by performing the following steps:
+   * This method double-clicks the element by performing the following steps:
    * 1. Wait for [actionability](https://playwright.dev/docs/actionability) checks on the element, unless
    *    [`force`](https://playwright.dev/docs/api/class-elementhandle#element-handle-dblclick-option-force) option is
    *    set.
    * 1. Scroll the element into view if needed.
-   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double click in the center of the
+   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double-click in the center of the
    *    element, or the specified
    *    [`position`](https://playwright.dev/docs/api/class-elementhandle#element-handle-dblclick-option-position).
    *
@@ -12152,7 +12152,7 @@ export interface ElementHandle<T=Node> extends JSHandle<T> {
     quality?: number;
 
     /**
-     * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+     * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
      * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
      * screenshots of high-dpi devices will be twice as large or even larger.
      *
@@ -12162,7 +12162,7 @@ export interface ElementHandle<T=Node> extends JSHandle<T> {
 
     /**
      * Text of the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make
-     * elements invisible or change their properties to help you creating repeatable screenshots. This stylesheet pierces
+     * elements invisible or change their properties to help you create repeatable screenshots. This stylesheet pierces
      * the Shadow DOM and applies to the inner frames.
      */
     style?: string;
@@ -13321,11 +13321,11 @@ export interface Locator {
    *
    * **Details**
    *
-   * This method double clicks the element by performing the following steps:
+   * This method double-clicks the element by performing the following steps:
    * 1. Wait for [actionability](https://playwright.dev/docs/actionability) checks on the element, unless
    *    [`force`](https://playwright.dev/docs/api/class-locator#locator-dblclick-option-force) option is set.
    * 1. Scroll the element into view if needed.
-   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double click in the center of the
+   * 1. Use [page.mouse](https://playwright.dev/docs/api/class-page#page-mouse) to double-click in the center of the
    *    element, or the specified
    *    [`position`](https://playwright.dev/docs/api/class-locator#locator-dblclick-option-position).
    *
@@ -13855,7 +13855,7 @@ export interface Locator {
    * Role selector **does not replace** accessibility audits and conformance tests, but rather gives early feedback
    * about the ARIA guidelines.
    *
-   * Many html elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
+   * Many HTML elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
    * that is recognized by the role selector. You can find all the
    * [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend**
    * duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
@@ -15507,9 +15507,9 @@ export interface BrowserType<Unused = {}> {
       /**
        * This option only applies to the requests sent from corresponding
        * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-       * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-       * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+       * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+       * header is received. Defaults to `'unauthorized'`.
        */
       send?: "unauthorized"|"always";
     };
@@ -15535,7 +15535,7 @@ export interface BrowserType<Unused = {}> {
     isMobile?: boolean;
 
     /**
-     * Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about
+     * Whether to enable JavaScript in the context. Defaults to `true`. Learn more about
      * [disabling JavaScript](https://playwright.dev/docs/emulation#javascript-enabled).
      */
     javaScriptEnabled?: boolean;
@@ -15758,7 +15758,7 @@ export interface BrowserType<Unused = {}> {
     videosPath?: string;
 
     /**
-     * Emulates consistent viewport for each page. Defaults to an 1280x720 viewport. Use `null` to disable the consistent
+     * Emulates consistent viewport for each page. Defaults to a 1280x720 viewport. Use `null` to disable the consistent
      * viewport emulation. Learn more about [viewport emulation](https://playwright.dev/docs/emulation#viewport).
      *
      * **NOTE** The `null` value opts out from the default presets, makes viewport depend on the host window size defined
@@ -16769,7 +16769,7 @@ export {};
  */
 export interface Android {
   /**
-   * This methods attaches Playwright to an existing Android device. Use
+   * This method attaches Playwright to an existing Android device. Use
    * [android.launchServer([options])](https://playwright.dev/docs/api/class-android#android-launch-server) to launch a
    * new Android server instance.
    * @param wsEndpoint A browser websocket endpoint to connect to.
@@ -17183,9 +17183,9 @@ export interface AndroidDevice {
       /**
        * This option only applies to the requests sent from corresponding
        * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-       * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-       * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+       * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+       * header is received. Defaults to `'unauthorized'`.
        */
       send?: "unauthorized"|"always";
     };
@@ -17203,7 +17203,7 @@ export interface AndroidDevice {
     isMobile?: boolean;
 
     /**
-     * Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about
+     * Whether to enable JavaScript in the context. Defaults to `true`. Learn more about
      * [disabling JavaScript](https://playwright.dev/docs/emulation#javascript-enabled).
      */
     javaScriptEnabled?: boolean;
@@ -17414,7 +17414,7 @@ export interface AndroidDevice {
     videosPath?: string;
 
     /**
-     * Emulates consistent viewport for each page. Defaults to an 1280x720 viewport. Use `null` to disable the consistent
+     * Emulates consistent viewport for each page. Defaults to a 1280x720 viewport. Use `null` to disable the consistent
      * viewport emulation. Learn more about [viewport emulation](https://playwright.dev/docs/emulation#viewport).
      *
      * **NOTE** The `null` value opts out from the default presets, makes viewport depend on the host window size defined
@@ -18006,7 +18006,7 @@ export interface APIRequest {
     extraHTTPHeaders?: { [key: string]: string; };
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
@@ -18028,9 +18028,9 @@ export interface APIRequest {
       /**
        * This option only applies to the requests sent from corresponding
        * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-       * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-       * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+       * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+       * header is received. Defaults to `'unauthorized'`.
        */
       send?: "unauthorized"|"always";
     };
@@ -18132,8 +18132,8 @@ export interface APIRequest {
 }
 
 /**
- * This API is used for the Web API testing. You can use it to trigger API endpoints, configure micro-services,
- * prepare environment or the service to your e2e test.
+ * This API is used for the Web API testing. You can use it to trigger API endpoints, configure microservices, prepare
+ * environment or the service to your e2e test.
  *
  * Each Playwright browser context has associated with it
  * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) instance which shares cookie storage
@@ -18169,20 +18169,20 @@ export interface APIRequestContext {
    */
   delete(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18212,7 +18212,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18281,7 +18281,7 @@ export interface APIRequestContext {
    * ```
    *
    * The common way to send file(s) in the body of a request is to upload them as form fields with `multipart/form-data`
-   * encoding, by specifiying the `multipart` parameter:
+   * encoding, by specifying the `multipart` parameter:
    *
    * ```js
    * const form = new FormData();
@@ -18300,20 +18300,20 @@ export interface APIRequestContext {
    */
   fetch(urlOrRequest: string|Request, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18349,7 +18349,7 @@ export interface APIRequestContext {
     method?: string;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18418,20 +18418,20 @@ export interface APIRequestContext {
    */
   get(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18461,7 +18461,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18504,20 +18504,20 @@ export interface APIRequestContext {
    */
   head(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18547,7 +18547,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18590,20 +18590,20 @@ export interface APIRequestContext {
    */
   patch(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18633,7 +18633,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18718,20 +18718,20 @@ export interface APIRequestContext {
    */
   post(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18761,7 +18761,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -18804,20 +18804,20 @@ export interface APIRequestContext {
    */
   put(url: string, options?: {
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     data?: string|Buffer|Serializable;
 
     /**
-     * Whether to throw on response codes other than 2xx and 3xx. By default response object is returned for all status
+     * Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned for all status
      * codes.
      */
     failOnStatusCode?: boolean;
 
     /**
-     * Provides an object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent
+     * Provides an object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent
      * as this request body. If this parameter is specified `content-type` header will be set to
      * `application/x-www-form-urlencoded` unless explicitly provided.
      */
@@ -18847,7 +18847,7 @@ export interface APIRequestContext {
     maxRetries?: number;
 
     /**
-     * Provides an object that will be serialized as html form using `multipart/form-data` encoding and sent as this
+     * Provides an object that will be serialized as HTML form using `multipart/form-data` encoding and sent as this
      * request body. If this parameter is specified `content-type` header will be set to `multipart/form-data` unless
      * explicitly provided. File values can be passed either as
      * [`fs.ReadStream`](https://nodejs.org/api/fs.html#fs_class_fs_readstream) or as file-like object containing file
@@ -19619,7 +19619,7 @@ export interface Download {
  *
  * **Known issues:**
  *
- * If you are not able to launch Electron and it will end up in timeouts during launch, try the following:
+ * If you are not able to launch Electron, and it will end up in timeouts during launch, try the following:
  * - Ensure that `nodeCliInspect`
  *   ([FuseV1Options.EnableNodeCliInspectArguments](https://www.electronjs.org/docs/latest/tutorial/fuses#nodecliinspect))
  *   fuse is **not** set to `false`.
@@ -19714,9 +19714,9 @@ export interface Electron {
       /**
        * This option only applies to the requests sent from corresponding
        * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-       * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-       * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+       * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+       * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+       * header is received. Defaults to `'unauthorized'`.
        */
       send?: "unauthorized"|"always";
     };
@@ -20084,7 +20084,7 @@ export interface FrameLocator {
    * Role selector **does not replace** accessibility audits and conformance tests, but rather gives early feedback
    * about the ARIA guidelines.
    *
-   * Many html elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
+   * Many HTML elements have an implicitly [defined role](https://w3c.github.io/html-aam/#html-element-role-mappings)
    * that is recognized by the role selector. You can find all the
    * [supported roles here](https://www.w3.org/TR/wai-aria-1.2/#role_definitions). ARIA guidelines **do not recommend**
    * duplicating implicit roles and attributes by setting `role` and/or `aria-*` attributes to default values.
@@ -20454,7 +20454,7 @@ export interface Keyboard {
    * page.keyboard.insertText('嗨');
    * ```
    *
-   * **NOTE** Modifier keys DO NOT effect `keyboard.insertText`. Holding down `Shift` will not type the text in upper
+   * **NOTE** Modifier keys DO NOT affect `keyboard.insertText`. Holding down `Shift` will not type the text in upper
    * case.
    *
    * @param text Sets input to the specified text value.
@@ -20531,7 +20531,7 @@ export interface Keyboard {
    * await page.keyboard.type('World', { delay: 100 }); // Types slower, like a user
    * ```
    *
-   * **NOTE** Modifier keys DO NOT effect `keyboard.type`. Holding down `Shift` will not type the text in upper case.
+   * **NOTE** Modifier keys DO NOT affect `keyboard.type`. Holding down `Shift` will not type the text in upper case.
    *
    * **NOTE** For characters that are not on a US keyboard, only an `input` event will be sent.
    *
@@ -20897,7 +20897,7 @@ export interface Request {
    * Returns parsed request's body for `form-urlencoded` and JSON as a fallback if any.
    *
    * When the response is `application/x-www-form-urlencoded` then a key/value object of the values will be returned.
-   * Otherwise it will be parsed as JSON.
+   * Otherwise, it will be parsed as JSON.
    */
   postDataJSON(): null|Serializable;
 
@@ -21459,8 +21459,8 @@ export interface Route {
     method?: string;
 
     /**
-     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type`
+     * Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+     * and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type`
      * header will be set to `application/octet-stream` if not explicitly set.
      */
     postData?: string|Buffer|Serializable;
@@ -22463,7 +22463,7 @@ export interface LocatorScreenshotOptions {
   quality?: number;
 
   /**
-   * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+   * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
    * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
    * screenshots of high-dpi devices will be twice as large or even larger.
    *
@@ -22473,7 +22473,7 @@ export interface LocatorScreenshotOptions {
 
   /**
    * Text of the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make
-   * elements invisible or change their properties to help you creating repeatable screenshots. This stylesheet pierces
+   * elements invisible or change their properties to help you create repeatable screenshots. This stylesheet pierces
    * the Shadow DOM and applies to the inner frames.
    */
   style?: string;
@@ -22668,7 +22668,7 @@ export interface BrowserContextOptions {
   isMobile?: boolean;
 
   /**
-   * Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about
+   * Whether to enable JavaScript in the context. Defaults to `true`. Learn more about
    * [disabling JavaScript](https://playwright.dev/docs/emulation#javascript-enabled).
    */
   javaScriptEnabled?: boolean;
@@ -22925,7 +22925,7 @@ export interface BrowserContextOptions {
   videosPath?: string;
 
   /**
-   * Emulates consistent viewport for each page. Defaults to an 1280x720 viewport. Use `null` to disable the consistent
+   * Emulates consistent viewport for each page. Defaults to a 1280x720 viewport. Use `null` to disable the consistent
    * viewport emulation. Learn more about [viewport emulation](https://playwright.dev/docs/emulation#viewport).
    *
    * **NOTE** The `null` value opts out from the default presets, makes viewport depend on the host window size defined
@@ -22960,9 +22960,9 @@ export interface HTTPCredentials {
   /**
    * This option only applies to the requests sent from corresponding
    * [APIRequestContext](https://playwright.dev/docs/api/class-apirequestcontext) and does not affect requests sent from
-   * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with the each
-   * API request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with
-   * `WWW-Authenticate` header is received. Defaults to `'unauthorized'`.
+   * the browser. `'always'` - `Authorization` header with basic authentication credentials will be sent with each API
+   * request. `'unauthorized` - the credentials are only sent when 401 (Unauthorized) response with `WWW-Authenticate`
+   * header is received. Defaults to `'unauthorized'`.
    */
   send?: "unauthorized"|"always";
 }
@@ -23135,7 +23135,7 @@ export interface PageScreenshotOptions {
   quality?: number;
 
   /**
-   * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+   * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
    * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
    * screenshots of high-dpi devices will be twice as large or even larger.
    *
@@ -23145,7 +23145,7 @@ export interface PageScreenshotOptions {
 
   /**
    * Text of the stylesheet to apply while making the screenshot. This is where you can hide dynamic elements, make
-   * elements invisible or change their properties to help you creating repeatable screenshots. This stylesheet pierces
+   * elements invisible or change their properties to help you create repeatable screenshots. This stylesheet pierces
    * the Shadow DOM and applies to the inner frames.
    */
   style?: string;

@@ -114,7 +114,7 @@ Element is considered receiving pointer events when it is the hit target of the 
 
 
 For example, consider a scenario where Playwright will click `Sign Up` button regardless of when the [`method: Locator.click`] call was made:
-- page is checking that user name is unique and `Sign Up` button is disabled;
+- page is checking that username is unique and `Sign Up` button is disabled;
 - after checking with the server, the disabled `Sign Up` button is replaced with another one that is now enabled.
 
 [Visible]: #visible "Visible"

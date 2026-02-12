@@ -539,8 +539,8 @@ If set changes the request method (e.g. GET or POST).
 * since: v1.29
 - `postData` <[string]|[Buffer]|[Serializable]>
 
-Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type` header will be
+Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type` header will be
 set to `application/octet-stream` if not explicitly set.
 
 ### option: Route.fetch.postData

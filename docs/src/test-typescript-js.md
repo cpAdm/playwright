@@ -75,7 +75,7 @@ test('example', async ({ page }) => {
 
 ### tsconfig resolution
 
-By default, Playwright will look up a closest tsconfig for each imported file by going up the directory structure and looking for `tsconfig.json` or `jsconfig.json`. This way, you can create a `tests/tsconfig.json` file that will be used only for your tests and Playwright will pick it up automatically.
+By default, Playwright will look up the closest tsconfig for each imported file by going up the directory structure and looking for `tsconfig.json` or `jsconfig.json`. This way, you can create a `tests/tsconfig.json` file that will be used only for your tests and Playwright will pick it up automatically.
 
 ```sh
 # Playwright will choose tsconfig automatically
@@ -105,7 +105,7 @@ Sometimes, Playwright Test will not be able to transform your TypeScript code co
 
 In this case, you can perform your own TypeScript compilation before sending the tests to Playwright.
 
-First add a `tsconfig.json` file inside the tests directory:
+First add a `tsconfig.json` file inside the tests' directory:
 
 ```json
 {
@@ -130,6 +130,6 @@ In `package.json`, add two scripts:
 }
 ```
 
-The `pretest` script runs typescript on the tests. `test` will run the tests that have been generated to the `tests-out` directory. The `-c` argument configures the test runner to look for tests inside the `tests-out` directory.
+The `pretest` script runs TypeScript on the tests. `test` will run the tests that have been generated to the `tests-out` directory. The `-c` argument configures the test runner to look for tests inside the `tests-out` directory.
 
 Then `npm run test` will build the tests and run them.

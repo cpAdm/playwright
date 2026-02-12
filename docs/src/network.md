@@ -178,7 +178,7 @@ await using var browser = await BrowserType.LaunchAsync(new()
 });
 ```
 
-Its also possible to specify it per context:
+It's also possible to specify it per context:
 
 ```js tab=js-test title="example.spec.ts"
 import { test, expect } from '@playwright/test';

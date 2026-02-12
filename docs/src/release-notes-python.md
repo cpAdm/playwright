@@ -50,7 +50,7 @@ We're expecting no functional changes to come from this switch. The biggest chan
 
 ![new and old logo](./images/cft-logo-change.png)
 
-If you still see an unexpected behaviour change, please [file an issue](https://github.com/microsoft/playwright/issues/new).
+If you still see an unexpected behavior change, please [file an issue](https://github.com/microsoft/playwright/issues/new).
 
 On Arm64 Linux, Playwright continues to use Chromium.
 
@@ -453,7 +453,7 @@ context = browser.new_context(
 
 ### Trace Viewer Updates
 
-- Content of text attachments is now rendered inline in the attachments pane.
+- Content of text attachments is now rendered inline in the attachments' pane.
 - New setting to show/hide routing actions like [`method: Route.continue`].
 - Request method and status are shown in the network details tab.
 - New button to copy source file location to clipboard.
@@ -561,7 +561,7 @@ This version was also tested against the following stable channels:
 
 **Locator handler**
 
-- After executing the handler added with [`method: Page.addLocatorHandler`], Playwright will now wait until the overlay that triggered the handler is not visible anymore. You can opt-out of this behavior with the new `no_wait_after` option.
+- After executing the handler added with [`method: Page.addLocatorHandler`], Playwright will now wait until the overlay that triggered the handler is not visible anymore. You can opt out of this behavior with the new `no_wait_after` option.
 - You can use new `times` option in [`method: Page.addLocatorHandler`] to specify maximum number of times the handler should be run.
 - The handler in [`method: Page.addLocatorHandler`] now accepts the locator as argument.
 - New [`method: Page.removeLocatorHandler`] method for removing previously added locator handlers.
@@ -724,7 +724,7 @@ def test_example(page: Page) -> None:
 
 ### Other Changes
 
-- Method [`method: Download.path`] throws an error for failed and cancelled downloads.
+- Method [`method: Download.path`] throws an error for failed and canceled downloads.
 
 ### Browser Versions
 
@@ -870,7 +870,7 @@ This version was also tested against the following stable channels:
 
 * New events [`event: BrowserContext.console`] and [`event: BrowserContext.dialog`] to subscribe to any dialogs
   and console messages from any page from the given browser context. Use the new methods [`method: ConsoleMessage.page`]
-  and [`method: Dialog.page`] to pin-point event source.
+  and [`method: Dialog.page`] to pinpoint event source.
 
 ### Browser Versions
 
@@ -1208,9 +1208,10 @@ This version was also tested against the following stable channels:
 
 ## Version 1.24
 
-<div className="embed-youtube">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9F05o1shxcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<LiteYouTube
+  id="9F05o1shxcY"
+  title="Playwright 1.24"
+/>
 
 ### 🐂 Debian 11 Bullseye Support
 
@@ -1219,8 +1220,8 @@ if you encounter any issues!
 
 Linux support looks like this:
 
-|          | Ubuntu 20.04 | Ubuntu 22.04 | Debian 11
-| :--- | :---: | :---: | :---: | :---: |
+|          | Ubuntu 20.04 | Ubuntu 22.04 | Debian 11 |
+| :--- | :---: | :---: | :---: |
 | Chromium | ✅ | ✅ | ✅ |
 | WebKit | ✅ | ✅ | ✅ |
 | Firefox | ✅ | ✅ | ✅ |
@@ -1687,7 +1688,7 @@ Previously it was not possible to get multiple header values of a response. This
 
 ### 🌈 Forced-Colors emulation
 
-Its now possible to emulate the `forced-colors` CSS media feature by passing it in the [`method: Browser.newContext`] or calling [`method: Page.emulateMedia`].
+It's now possible to emulate the `forced-colors` CSS media feature by passing it in the [`method: Browser.newContext`] or calling [`method: Page.emulateMedia`].
 
 ### New APIs
 
@@ -1969,14 +1970,14 @@ This version of Playwright was also tested against the following stable channels
 
 - **New Java SDK**: [Playwright for Java](https://github.com/microsoft/playwright-java) is now on par with [JavaScript](https://github.com/microsoft/playwright), [Python](https://github.com/microsoft/playwright-python) and [.NET bindings](https://github.com/microsoft/playwright-dotnet).
 - **Browser storage API**: New convenience APIs to save and load browser storage state (cookies, local storage) to simplify automation scenarios with authentication.
-- **New CSS selectors**: We heard your feedback for more flexible selectors and have revamped the selectors implementation. Playwright 1.7 introduces [new CSS extensions](./other-locators.md#css-locator) and there's more coming soon.
+- **New CSS selectors**: We heard your feedback for more flexible selectors and have revamped the selectors' implementation. Playwright 1.7 introduces [new CSS extensions](./other-locators.md#css-locator) and there's more coming soon.
 - **New website**: The docs website at [playwright.dev](https://playwright.dev/) has been updated and is now built with [Docusaurus](https://v2.docusaurus.io/).
 - **Support for Apple Silicon**: Playwright browser binaries for WebKit and Chromium are now built for Apple Silicon.
 
 #### New APIs
 
 - [`method: BrowserContext.storageState`] to get current state for later reuse.
-- `storageState` option in [`method: Browser.newContext`] and [`method: Browser.newPage`] to setup browser context state.
+- `storageState` option in [`method: Browser.newContext`] and [`method: Browser.newPage`] to set up browser context state.
 
 #### Browser Versions
 

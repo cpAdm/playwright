@@ -40,7 +40,7 @@ await Page.GetByRole(AriaRole.Button).ClickAsync();
 ```
 
 :::note
-[`event: Page.dialog`] listener **must handle** the dialog. Otherwise your action will stall, be it [`method: Locator.click`] or something else. That's because dialogs in Web are modals and therefore block further page execution until they are handled.
+[`event: Page.dialog`] listener **must handle** the dialog. Otherwise, your action will stall, be it [`method: Locator.click`] or something else. That's because dialogs in Web are modals and therefore block further page execution until they are handled.
 :::
 
 As a result, the following snippet will never resolve:

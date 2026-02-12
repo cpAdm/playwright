@@ -17,7 +17,7 @@ Automated tests should verify that the application code works for the end users,
 
 Each test should be completely isolated from another test and should run independently with its own local storage, session storage, data, cookies etc. [Test isolation](./browser-contexts.md) improves reproducibility, makes debugging easier and prevents cascading test failures.
 
-In order to avoid repetition for a particular part of your test you can use [before and after hooks](/api/class-test.md). Within your test file add a before hook to run a part of your test before each test such as going to a particular URL or logging in to a part of your app. This keeps your tests isolated as no test relies on another. However it is also ok to have a little duplication when tests are simple enough especially if it keeps your tests clearer and easier to read and maintain.
+In order to avoid repetition for a particular part of your test you can use [before and after hooks](/api/class-test.md). Within your test file add a before hook to run a part of your test before each test such as going to a particular URL or logging in to a part of your app. This keeps your tests isolated as no test relies on another. However, it is also ok to have a little duplication when tests are simple enough especially if it keeps your tests clearer and easier to read and maintain.
 
 ```js
 import { test } from '@playwright/test';
@@ -39,11 +39,11 @@ test('second', async ({ page }) => {
 });
 ```
 
-You can also reuse the signed-in state in the tests with [setup project](./auth.md#basic-shared-account-in-all-tests). That way you can log in only once and then skip the log in step for all of the tests.
+You can also reuse the signed-in state in the tests with [setup project](./auth.md#basic-shared-account-in-all-tests). That way you can log in only once and then skip the log in step for all the tests.
 
 ### Avoid testing third-party dependencies
 
-Only test what you control. Don't try to test links to external sites or third party servers that you do not control. Not only is it time consuming and can slow down your tests but also you cannot control the content of the page you are linking to, or if there are cookie banners or overlay pages or anything else that might cause your test to fail.
+Only test what you control. Don't try to test links to external sites or third party servers that you do not control. Not only is it time-consuming and can slow down your tests, but also you cannot control the content of the page you are linking to, or if there are cookie banners or overlay pages or anything else that might cause your test to fail.
 
 Instead, use the [Playwright Network API](/network.md#handle-requests) and guarantee the response needed.
 
@@ -63,7 +63,7 @@ If working with a database then make sure you control the data. Test against a s
 
 ### Use locators
 
-In order to write end to end tests we need to first find elements on the webpage. We can do this by using Playwright's built in [locators](./locators.md). Locators come with auto waiting and retry-ability. Auto waiting means that Playwright performs a range of actionability checks on the elements, such as ensuring the element is visible and enabled before it performs the click. To make tests resilient, we recommend prioritizing user-facing attributes and explicit contracts.
+In order to write end-to-end tests we need to first find elements on the webpage. We can do this by using Playwright's built in [locators](./locators.md). Locators come with auto waiting and retry-ability. Auto waiting means that Playwright performs a range of actionability checks on the elements, such as ensuring the element is visible and enabled before it performs the click. To make tests resilient, we recommend prioritizing user-facing attributes and explicit contracts.
 
 ```js
 // 👍
@@ -147,7 +147,7 @@ pnpm exec playwright codegen playwright.dev
 
 </Tabs>
 
-This will open a new browser window as well as the Playwright inspector. To pick a locator first click on the 'Record' button to stop the recording. By default when you run the `codegen` command it will start a new recording. Once you stop the recording the 'Pick Locator' button will be available to click.
+This will open a new browser window as well as the Playwright inspector. To pick a locator first click on the 'Record' button to stop the recording. By default, when you run the `codegen` command it will start a new recording. Once you stop the recording the 'Pick Locator' button will be available to click.
 
 You can then hover over any element on your page in the browser window and see the locator highlighted below your cursor. Clicking on an element will add the locator into the Playwright inspector. You can either copy the locator and paste into your test file or continue to explore the locator by editing it in the Playwright Inspector, for example by modifying the text, and seeing the results in the browser window.
 
@@ -173,7 +173,7 @@ expect(await page.getByText('welcome').isVisible()).toBe(true);
 
 #### Don't use manual assertions
 
-Don't use manual assertions that are not awaiting the expect. In the code below the await is inside the expect rather than before it. When using assertions such as `isVisible()` the test won't wait a single second, it will just check the locator is there and return immediately.
+Don't use manual assertions that are not awaiting the `expect`. In the code below the await is inside the expect rather than before it. When using assertions such as `isVisible()` the test won't wait a single second, it will just check the locator is there and return immediately.
 
 ```js
 // 👎
@@ -191,7 +191,7 @@ await expect(page.getByText('welcome')).toBeVisible();
 
 #### Local debugging
 
-For local debugging we recommend you [debug your tests live in VSCode.](/getting-started-vscode.md#live-debugging) by installing the [VS Code extension](./getting-started-vscode.md). You can run tests in debug mode by right clicking on the line next to the test you want to run which will open a browser window and pause at where the breakpoint is set.
+For local debugging we recommend you [debug your tests live in VSCode.](./getting-started-vscode.md#debugging-your-tests) by installing the [VS Code extension](./getting-started-vscode.md). You can run tests in debug mode by right-clicking on the line next to the test you want to run which will open a browser window and pause at where the breakpoint is set.
 
 <img width="1338" alt="debugging tests in vscode" loading="lazy" src="https://user-images.githubusercontent.com/13063165/212274675-5c6e1647-2aab-40fd-9804-8680c1ac2d16.png" />
 
@@ -284,7 +284,7 @@ For CI failures, use the Playwright [trace viewer](./trace-viewer.md) instead of
 
 <img width="1516" alt="playwrights trace viewer" loading="lazy" src="https://user-images.githubusercontent.com/13063165/212277895-c63d94c2-bd06-4881-864e-62790a072ca3.png" />
 
-Traces are configured in the Playwright config file and are set to run on CI on the first retry of a failed test. We don't recommend setting this to `on` so that traces are run on every test as it's very performance heavy. However you can run a trace locally when developing with the `--trace` flag.
+Traces are configured in the Playwright config file and are set to run on CI on the first retry of a failed test. We don't recommend setting this to `on` so that traces are run on every test as it's very performance heavy. However, you can run a trace locally when developing with the `--trace` flag.
 
 <Tabs
   groupId="js-package-manager"

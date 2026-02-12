@@ -5,7 +5,7 @@ title: "Sharding"
 
 ## Introduction
 
-By default, Playwright runs test files in [parallel](./test-parallel.md) and strives for optimal utilization of CPU cores on your machine. In order to achieve even greater parallelisation, you can further scale Playwright test execution by running tests on multiple machines simultaneously. We call this mode of operation "sharding". Sharding in Playwright means splitting your tests into smaller parts called "shards". Each shard is like a separate job that can run independently. The whole purpose is to divide your tests to speed up test runtime.
+By default, Playwright runs test files in [parallel](./test-parallel.md) and strives for optimal utilization of CPU cores on your machine. In order to achieve even greater parallelization, you can further scale Playwright test execution by running tests on multiple machines simultaneously. We call this mode of operation "sharding". Sharding in Playwright means splitting your tests into smaller parts called "shards". Each shard is like a separate job that can run independently. The whole purpose is to divide your tests to speed up test runtime.
 
 When you shard your tests, each shard can run on its own, utilizing the available CPU cores. This helps speed up the testing process by doing tasks simultaneously.
 
@@ -62,7 +62,7 @@ Blob report contains information about all the tests that were run and their res
 
 To merge reports from multiple shards, put the blob report files into a single directory, for example `all-blob-reports`. Blob report names contain shard number, so they will not clash.
 
-Afterwards, run `npx playwright merge-reports` command:
+Afterward, run `npx playwright merge-reports` command:
 
 ```bash
 npx playwright merge-reports --reporter html ./all-blob-reports
@@ -80,7 +80,7 @@ The following example shows you how to configure a job to run your tests on four
 
 1. Then we run our Playwright tests with the `--shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}` option. This will run our test command for each shard.
 
-1. Finally we upload our blob report to the GitHub Actions Artifacts. This will make the blob report available to other jobs in the workflow.
+1. Finally, we upload our blob report to the GitHub Actions Artifacts. This will make the blob report available to other jobs in the workflow.
 
 
 

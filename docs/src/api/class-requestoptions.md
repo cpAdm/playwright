@@ -13,7 +13,7 @@ context.request().post(
     .setData("My data"));
 ```
 
-**Uploading html form data**
+**Uploading HTML form data**
 
 [FormData] class can be used to send a form to the server, by default the request will use `application/x-www-form-urlencoded` encoding:
 
@@ -24,7 +24,7 @@ context.request().post("https://example.com/signup", RequestOptions.create().set
     .set("lastName", "Doe")));
 ```
 
-You can also send files as fields of an html form. The data will be encoded using [`multipart/form-data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST):
+You can also send files as fields of an HTML form. The data will be encoded using [`multipart/form-data`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST):
 
 ```java
 Path path = Paths.get("members.csv");
@@ -57,8 +57,8 @@ Sets the request's post data.
 * since: v1.18
 - `data` <[string]|[Buffer]|[Serializable]>
 
-Allows to set post data of the request. If the data parameter is an object, it will be serialized to json string
-and `content-type` header will be set to `application/json` if not explicitly set. Otherwise the `content-type` header will be
+Allows to set post data of the request. If the data parameter is an object, it will be serialized to JSON string
+and `content-type` header will be set to `application/json` if not explicitly set. Otherwise, the `content-type` header will be
 set to `application/octet-stream` if not explicitly set.
 
 ## method: RequestOptions.setFailOnStatusCode
@@ -69,14 +69,14 @@ set to `application/octet-stream` if not explicitly set.
 * since: v1.18
 - `failOnStatusCode` <[boolean]>
 
-Whether to throw on response codes other than 2xx and 3xx. By default response object is returned
+Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned
 for all status codes.
 
 ## method: RequestOptions.setForm
 * since: v1.18
 - returns: <[RequestOptions]>
 
-Provides [FormData] object that will be serialized as html form using `application/x-www-form-urlencoded` encoding and sent as
+Provides [FormData] object that will be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `application/x-www-form-urlencoded`
 unless explicitly provided.
 
@@ -84,7 +84,7 @@ unless explicitly provided.
 * since: v1.18
 - `form` <[FormData]>
 
-Form data to be serialized as html form using `application/x-www-form-urlencoded` encoding and sent as
+Form data to be serialized as HTML form using `application/x-www-form-urlencoded` encoding and sent as
 this request body.
 
 ## method: RequestOptions.setHeader
@@ -153,7 +153,7 @@ Request method, e.g. [POST](https://developer.mozilla.org/en-US/docs/Web/HTTP/Me
 * since: v1.18
 - returns: <[RequestOptions]>
 
-Provides [FormData] object that will be serialized as html form using `multipart/form-data` encoding and sent as
+Provides [FormData] object that will be serialized as HTML form using `multipart/form-data` encoding and sent as
 this request body. If this parameter is specified `content-type` header will be set to `multipart/form-data`
 unless explicitly provided.
 
@@ -161,7 +161,7 @@ unless explicitly provided.
 * since: v1.18
 - `form` <[FormData]>
 
-Form data to be serialized as html form using `multipart/form-data` encoding and sent as
+Form data to be serialized as HTML form using `multipart/form-data` encoding and sent as
 this request body.
 
 ## method: RequestOptions.setQueryParam

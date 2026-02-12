@@ -167,7 +167,7 @@ Request's post body in a binary form, if any.
 Returns parsed request's body for `form-urlencoded` and JSON as a fallback if any.
 
 When the response is `application/x-www-form-urlencoded` then a key/value object of the values will be returned.
-Otherwise it will be parsed as JSON.
+Otherwise, it will be parsed as JSON.
 
 ## method: Request.postDataJSON
 * since: v1.12
@@ -177,7 +177,7 @@ Otherwise it will be parsed as JSON.
 Returns parsed request's body for `form-urlencoded` and JSON as a fallback if any.
 
 When the response is `application/x-www-form-urlencoded` then a key/value object of the values will be returned.
-Otherwise it will be parsed as JSON.
+Otherwise, it will be parsed as JSON.
 
 ## method: Request.redirectedFrom
 * since: v1.8

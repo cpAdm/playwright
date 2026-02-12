@@ -69,7 +69,7 @@ test('basic test', async ({}, testInfo) => {
 :::note
 [`method: TestInfo.attach`] automatically takes care of copying attached files to a
 location that is accessible to reporters. You can safely remove the attachment
-after awaiting the attach call.
+after awaiting the `attach` call.
 :::
 
 ### param: TestInfo.attach.name

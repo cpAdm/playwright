@@ -25,7 +25,7 @@ Creates new instances of [APIRequestContext].
 * since: v1.51
 - `failOnStatusCode` <[boolean]>
 
-Whether to throw on response codes other than 2xx and 3xx. By default response object is returned
+Whether to throw on response codes other than 2xx and 3xx. By default, response object is returned
 for all status codes.
 
 ### option: APIRequest.newContext.httpCredentials = %%-context-option-httpcredentials-%%

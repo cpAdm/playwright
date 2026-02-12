@@ -502,7 +502,7 @@ Whether to skip entries from `.gitignore` when searching for test files. By defa
 * since: v1.10
 - type: ?<[int]>
 
-The maximum number of retry attempts given to failed tests. By default failing tests are not retried. Learn more about [test retries](../test-retries.md#retries).
+The maximum number of retry attempts given to failed tests. By default, failing tests are not retried. Learn more about [test retries](../test-retries.md#retries).
 
 **Usage**
 
@@ -730,7 +730,7 @@ For continuous integration, you may want to use the `reuseExistingServer: !proce
 The `port` (but not the `url`) gets passed over to Playwright as a [`property: TestOptions.baseURL`]. For example port `8080` produces `baseURL` equal `http://localhost:8080`. If `webServer` is specified as an array, you must explicitly configure the `baseURL` (even if it only has one entry).
 
 :::note
-It is also recommended to specify [`property: TestOptions.baseURL`] in the config, so that tests could use relative urls.
+It is also recommended to specify [`property: TestOptions.baseURL`] in the config, so that tests could use relative URLs.
 :::
 
 **Usage**

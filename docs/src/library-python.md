@@ -169,10 +169,10 @@ Most likely you don't need to wait manually, since Playwright has [auto-waiting]
 
 ### incompatible with `SelectorEventLoop` of `asyncio` on Windows
 
-Playwright runs the driver in a subprocess, so it requires `ProactorEventLoop` of `asyncio` on Windows because `SelectorEventLoop` does not supports async subprocesses.
+Playwright runs the driver in a subprocess, so it requires `ProactorEventLoop` of `asyncio` on Windows because `SelectorEventLoop` does not support async subprocesses.
 
 On Windows Python 3.7, Playwright sets the default event loop to `ProactorEventLoop` as it is default on Python 3.8+.
 
 ### Threading
 
-Playwright's API is not thread-safe. If you are using Playwright in a multi-threaded environment, you should create a playwright instance per thread. See [threading issue](https://github.com/microsoft/playwright-python/issues/623) for more details.
+Playwright's API is not thread-safe. If you are using Playwright in a multithreaded environment, you should create a playwright instance per thread. See [threading issue](https://github.com/microsoft/playwright-python/issues/623) for more details.

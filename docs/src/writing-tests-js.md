@@ -133,7 +133,7 @@ expect(success).toBeTruthy();
 
 ### Test Isolation
 
-Playwright Test is based on the concept of [test fixtures](./test-fixtures.md) such as the [built in page fixture](./test-fixtures#built-in-fixtures), which is passed into your test. Pages are [isolated between tests due to the Browser Context](./browser-contexts), which is equivalent to a brand new browser profile. Every test gets a fresh environment, even when multiple tests run in a single browser.
+Playwright Test is based on the concept of [test fixtures](./test-fixtures.md) such as the [built-in page fixture](./test-fixtures#built-in-fixtures), which is passed into your test. Pages are [isolated between tests due to the Browser Context](./browser-contexts), which is equivalent to a brand-new browser profile. Every test gets a fresh environment, even when multiple tests run in a single browser.
 
 ```js title="tests/example.spec.ts"
 import { test } from '@playwright/test';

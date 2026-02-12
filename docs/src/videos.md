@@ -10,7 +10,7 @@ With Playwright you can record videos for your tests.
 ## Record video
 * langs: js
 
-Playwright Test can record videos for your tests, controlled by the `video` option in your Playwright config. By default videos are off.
+Playwright Test can record videos for your tests, controlled by the `video` option in your Playwright config. By default, videos are off.
 
 - `'off'` - Do not record video.
 - `'on'` - Record video for each test.
@@ -59,7 +59,7 @@ const context = await browser.newContext({
 });
 ```
 
-For multi-page scenarios, you can access the video file associated with the page via the
+For multipage scenarios, you can access the video file associated with the page via the
 [`method: Page.video`].
 
 
@@ -151,7 +151,7 @@ await context.CloseAsync();
 ```
 
 Saved video files will appear in the specified folder. They all have generated unique names.
-For the multi-page scenarios, you can access the video file associated with the page via the
+For the multipage scenarios, you can access the video file associated with the page via the
 [`method: Page.video`].
 
 

@@ -1,7 +1,7 @@
 # class: APIRequestContext
 * since: v1.16
 
-This API is used for the Web API testing. You can use it to trigger API endpoints, configure micro-services, prepare
+This API is used for the Web API testing. You can use it to trigger API endpoints, configure microservices, prepare
 environment or the service to your e2e test.
 
 Each Playwright browser context has associated with it [APIRequestContext] instance which shares cookie storage with
@@ -247,7 +247,7 @@ var data = new Dictionary<string, object>() {
 await Request.FetchAsync("https://example.com/api/createBook", new() { Method = "post", DataObject = data });
 ```
 
-The common way to send file(s) in the body of a request is to upload them as form fields with `multipart/form-data` encoding, by specifiying the `multipart` parameter:
+The common way to send file(s) in the body of a request is to upload them as form fields with `multipart/form-data` encoding, by specifying the `multipart` parameter:
 
 ```js
 const form = new FormData();

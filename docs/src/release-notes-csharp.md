@@ -50,7 +50,7 @@ We're expecting no functional changes to come from this switch. The biggest chan
 
 ![new and old logo](./images/cft-logo-change.png)
 
-If you still see an unexpected behaviour change, please [file an issue](https://github.com/microsoft/playwright/issues/new).
+If you still see an unexpected behavior change, please [file an issue](https://github.com/microsoft/playwright/issues/new).
 
 On Arm64 Linux, Playwright continues to use Chromium.
 
@@ -470,7 +470,7 @@ var context = await Browser.NewContextAsync(new() {
 
 ### Trace Viewer Updates
 
-- Content of text attachments is now rendered inline in the attachments pane.
+- Content of text attachments is now rendered inline in the attachments' pane.
 - New setting to show/hide routing actions like [`method: Route.continue`].
 - Request method and status are shown in the network details tab.
 - New button to copy source file location to clipboard.
@@ -581,7 +581,7 @@ This version was also tested against the following stable channels:
 
 **Locator handler**
 
-- After executing the handler added with [`method: Page.addLocatorHandler`], Playwright will now wait until the overlay that triggered the handler is not visible anymore. You can opt-out of this behavior with the new `NoWaitAfter` option.
+- After executing the handler added with [`method: Page.addLocatorHandler`], Playwright will now wait until the overlay that triggered the handler is not visible anymore. You can opt out of this behavior with the new `NoWaitAfter` option.
 - You can use new `Times` option in [`method: Page.addLocatorHandler`] to specify maximum number of times the handler should be run.
 - The handler in [`method: Page.addLocatorHandler`] now accepts the locator as argument.
 - New [`method: Page.removeLocatorHandler`] method for removing previously added locator handlers.
@@ -762,7 +762,7 @@ await Expect(Page.GetByPlaceholder("Search docs")).ToHaveValueAsync("locator");
 
 ### Other Changes
 
-- Methods [`method: Download.path`] and [`method: Download.createReadStream`] throw an error for failed and cancelled downloads.
+- Methods [`method: Download.path`] and [`method: Download.createReadStream`] throw an error for failed and canceled downloads.
 - Playwright [docker image](./docker.md) now comes with .NET 8 (new LTS).
 
 ### Browser Versions
@@ -900,7 +900,7 @@ This version was also tested against the following stable channels:
 
 * New events [`event: BrowserContext.console`] and [`event: BrowserContext.dialog`] to subscribe to any dialogs
   and console messages from any page from the given browser context. Use the new methods [`method: ConsoleMessage.page`]
-  and [`method: Dialog.page`] to pin-point event source.
+  and [`method: Dialog.page`] to pinpoint event source.
 
 ### Browser Versions
 
@@ -1264,9 +1264,10 @@ This version was also tested against the following stable channels:
 
 ## Version 1.24
 
-<div className="embed-youtube">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9F05o1shxcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<LiteYouTube
+  id="9F05o1shxcY"
+  title="Playwright 1.24"
+/>
 
 ### 🐂 Debian 11 Bullseye Support
 
@@ -1275,8 +1276,8 @@ if you encounter any issues!
 
 Linux support looks like this:
 
-|          | Ubuntu 20.04 | Ubuntu 22.04 | Debian 11
-| :--- | :---: | :---: | :---: | :---: |
+|          | Ubuntu 20.04 | Ubuntu 22.04 | Debian 11 |
+| :--- | :---: | :---: | :---: |
 | Chromium | ✅ | ✅ | ✅ |
 | WebKit | ✅ | ✅ | ✅ |
 | Firefox | ✅ | ✅ | ✅ |
@@ -1401,7 +1402,7 @@ Note that the new methods [`method: Page.routeFromHAR`] and [`method: BrowserCon
   var context = await Browser.NewContextAsync(new() { RecordHarPath = "example.har", RecordHarMode = HarMode.Minimal });
   ```
 * Playwright now runs on Ubuntu 22 amd64 and Ubuntu 22 arm64.
-* Playwright for .NET now supports **linux-arm64** and provides a **arm64 Ubuntu 20.04 Docker image** for it.
+* Playwright for .NET now supports **linux-arm64** and provides an **arm64 Ubuntu 20.04 Docker image** for it.
 
 ## Version 1.22
 
@@ -1677,7 +1678,7 @@ Previously it was not possible to get multiple header values of a response. This
 
 ### 🌈 Forced-Colors emulation
 
-Its now possible to emulate the `forced-colors` CSS media feature by passing it in the [`method: Browser.newContext`] or calling [`method: Page.emulateMedia`].
+It's now possible to emulate the `forced-colors` CSS media feature by passing it in the [`method: Browser.newContext`] or calling [`method: Page.emulateMedia`].
 
 ### New APIs
 

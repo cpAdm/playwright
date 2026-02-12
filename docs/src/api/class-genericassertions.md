@@ -612,7 +612,7 @@ expect(value).not.toEqual({ otherProp: expect.anything() });
 ## method: GenericAssertions.arrayContaining
 * since: v1.9
 
-`expect.arrayContaining()` matches an array that contains all of the elements in the expected array, in any order. Note that received array may be a superset of the expected array and contain some extra elements.
+`expect.arrayContaining()` matches an array that contains all the elements in the expected array, in any order. Note that received array may be a superset of the expected array and contain some extra elements.
 
 Use this method inside [`method: GenericAssertions.toEqual`] to perform pattern matching.
 
@@ -681,7 +681,7 @@ The number of decimal digits after the decimal point that must be equal.
 ## method: GenericAssertions.objectContaining
 * since: v1.9
 
-`expect.objectContaining()` matches an object that contains and matches all of the properties in the expected object. Note that received object may be a superset of the expected object and contain some extra properties.
+`expect.objectContaining()` matches an object that contains and matches all the properties in the expected object. Note that received object may be a superset of the expected object and contain some extra properties.
 
 Use this method inside [`method: GenericAssertions.toEqual`] to perform pattern matching. Object properties can be matchers to further relax the expectation. See examples.
 

@@ -189,7 +189,7 @@ await page.Keyboard.PressAsync("嗨");
 ```
 
 :::note
-Modifier keys DO NOT effect `keyboard.insertText`. Holding down `Shift` will not type the text in upper case.
+Modifier keys DO NOT affect `keyboard.insertText`. Holding down `Shift` will not type the text in upper case.
 :::
 
 ### param: Keyboard.insertText.text
@@ -340,7 +340,7 @@ await page.Keyboard.TypeAsync("World", new() { Delay = 100 }); // types slower, 
 ```
 
 :::note
-Modifier keys DO NOT effect `keyboard.type`. Holding down `Shift` will not type the text in upper case.
+Modifier keys DO NOT affect `keyboard.type`. Holding down `Shift` will not type the text in upper case.
 :::
 
 :::note

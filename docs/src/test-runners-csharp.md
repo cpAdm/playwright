@@ -5,7 +5,7 @@ title: "Test Runners"
 
 ## Introduction
 
-While Playwright for .NET isn't tied to a particular test runner or testing framework, in our experience the easiest way of getting started is by using the base classes we provide for MSTest, NUnit, xUnit, or xUnit v3. These classes support running tests on multiple browser engines, adjusting launch/context options and getting a [Page]/[BrowserContext] instance per test out of the box. 
+While Playwright for .NET isn't tied to a particular test runner or testing framework, in our experience the easiest way of getting started is by using the base classes we provide for MSTest, NUnit, xUnit, or xUnit v3. These classes support running tests on multiple browser engines, adjusting launch/context options and getting a [Page]/[BrowserContext] instance per test out of the box.
 
 Playwright and Browser instances will be reused between tests for better performance. We
 recommend running each test case in a new BrowserContext, this way browser state will be
@@ -59,7 +59,7 @@ Check out the [installation guide](./intro.md) to get started.
 }>
 <TabItem value="nunit">
 
-By default NUnit will run all test files in parallel, while running tests inside each file sequentially (`ParallelScope.Self`). It will create as many processes as there are cores on the host system. You can adjust this behavior using the NUnit.NumberOfTestWorkers parameter.
+By default, NUnit will run all test files in parallel, while running tests inside each file sequentially (`ParallelScope.Self`). It will create as many processes as there are cores on the host system. You can adjust this behavior using the NUnit.NumberOfTestWorkers parameter.
 Only `ParallelScope.Self` is supported.
 
 For CPU-bound tests, we recommend using as many workers as there are cores on your system, divided by 2. For IO-bound tests you can use as many workers as you have cores.
@@ -71,7 +71,7 @@ dotnet test -- NUnit.NumberOfTestWorkers=5
 </TabItem>
 <TabItem value="mstest">
 
-By default MSTest will run all classes in parallel, while running tests inside each class sequentially (`ExecutionScope.ClassLevel`). It will create as many processes as there are cores on the host system. You can adjust this behavior by using the following CLI parameter or using a `.runsettings` file, see below.
+By default, MSTest will run all classes in parallel, while running tests inside each class sequentially (`ExecutionScope.ClassLevel`). It will create as many processes as there are cores on the host system. You can adjust this behavior by using the following CLI parameter or using a `.runsettings` file, see below.
 Running tests in parallel at the method level (`ExecutionScope.MethodLevel`) is not supported.
 
 ```bash
@@ -81,7 +81,7 @@ dotnet test --settings:.runsettings -- MSTest.Parallelize.Workers=4
 </TabItem>
 <TabItem value="xunit">
 
-By default xUnit will run all classes in parallel, while running tests inside each class sequentially.
+By default, xUnit will run all classes in parallel, while running tests inside each class sequentially.
 It will create by default as many processes as there are cores on the system. You can adjust this behavior by using the following CLI parameter or using a `.runsettings` file, see below.
 
 ```bash
@@ -95,7 +95,7 @@ We recommend xUnit 2.8+ which uses the [`conservative` parallelism algorithm](ht
 </TabItem>
 <TabItem value="xunit-v3">
 
-By default xUnit v3 will run all classes in parallel, while running tests inside each class sequentially.
+By default, xUnit v3 will run all classes in parallel, while running tests inside each class sequentially.
 It will create by default as many processes as there are cores on the system. You can adjust this behavior by using the following CLI parameter or using a `.runsettings` file, see below.
 
 ```bash
@@ -319,7 +319,7 @@ For example, to specify the number of workers you can use `NUnit.NumberOfTestWor
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
-  <!-- NUnit adapter -->  
+  <!-- NUnit adapter -->
   <NUnit>
     <NumberOfTestWorkers>24</NumberOfTestWorkers>
   </NUnit>
@@ -330,7 +330,7 @@ For example, to specify the number of workers you can use `NUnit.NumberOfTestWor
       <DEBUG>pw:api</DEBUG>
     </EnvironmentVariables>
   </RunConfiguration>
-  <!-- Playwright -->  
+  <!-- Playwright -->
   <Playwright>
     <BrowserName>chromium</BrowserName>
     <ExpectTimeout>5000</ExpectTimeout>
@@ -349,7 +349,7 @@ For example, to specify the number of workers, you can use `MSTest.Parallelize.W
 
 ```xml
 <RunSettings>
-  <!-- MSTest adapter -->  
+  <!-- MSTest adapter -->
   <MSTest>
     <Parallelize>
       <Workers>4</Workers>
@@ -363,7 +363,7 @@ For example, to specify the number of workers, you can use `MSTest.Parallelize.W
       <DEBUG>pw:api</DEBUG>
     </EnvironmentVariables>
   </RunConfiguration>
-  <!-- Playwright -->  
+  <!-- Playwright -->
   <Playwright>
     <BrowserName>chromium</BrowserName>
     <ExpectTimeout>5000</ExpectTimeout>
@@ -394,7 +394,7 @@ For example, to specify the number of workers, you can use `xUnit.MaxParallelThr
       <DEBUG>pw:api</DEBUG>
     </EnvironmentVariables>
   </RunConfiguration>
-  <!-- Playwright -->  
+  <!-- Playwright -->
   <Playwright>
     <BrowserName>chromium</BrowserName>
     <ExpectTimeout>5000</ExpectTimeout>
@@ -424,7 +424,7 @@ For example, to specify the number of workers, you can use `xUnit.MaxParallelThr
       <DEBUG>pw:api</DEBUG>
     </EnvironmentVariables>
   </RunConfiguration>
-  <!-- Playwright -->  
+  <!-- Playwright -->
   <Playwright>
     <BrowserName>chromium</BrowserName>
     <ExpectTimeout>5000</ExpectTimeout>

@@ -561,7 +561,7 @@ await page.Locator("//span[contains(@class, 'spinner__loading')]|//div[@id='conf
 ## Label to form control retargeting
 
 :::warning
-We recommend [locating by label text](./locators.md#locate-by-label) instead of relying to label-to-control retargeting.
+We recommend [locating by label text](./locators.md#locate-by-label) instead of relying on label-to-control retargeting.
 :::
 
 Targeted input actions in Playwright automatically distinguish between labels and controls, so you can target the label to perform an action on the associated control.

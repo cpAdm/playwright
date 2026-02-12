@@ -59,7 +59,7 @@ playwright install
 
 ## Add Example Test
 
-Create a file that follows the `test_` prefix convention, such as `test_example.py`, inside the current working directory or in a sub-directory with the code below. Make sure your test name also follows the `test_` prefix convention.
+Create a file that follows the `test_` prefix convention, such as `test_example.py`, inside the current working directory or in a subdirectory with the code below. Make sure your test name also follows the `test_` prefix convention.
 
 ```py title="test_example.py"
 import re
@@ -83,7 +83,7 @@ def test_get_started_link(page: Page):
 
 ## Running the Example Test
 
-By default tests will be run on chromium. This can be configured via the [CLI options](./running-tests.md). Tests are run in headless mode meaning no browser UI will open up when running the tests. Results of the tests and test logs will be shown in the terminal.
+By default, tests will be run on chromium. This can be configured via the [CLI options](./running-tests.md). Tests are run in headless mode meaning no browser UI will open up when running the tests. Results of the tests and test logs will be shown in the terminal.
 
 ```bash
 pytest

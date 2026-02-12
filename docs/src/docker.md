@@ -192,7 +192,7 @@ When running tests remotely, ensure the Playwright version in your tests matches
 
 ### Connecting using noVNC and GitHub Codespaces
 
-For Docker and GitHub Codespaces environments, you can view and generate tests using the `noVNC` viewer built into the Docker image. In order for the VNC webviewer to be accessible outside of the container, you can enable the `desktop-lite` feature and specify the `webPort` in your `.devcontainer/devcontainer.json` file: 
+For Docker and GitHub Codespaces environments, you can view and generate tests using the `noVNC` viewer built into the Docker image. In order for the VNC webviewer to be accessible outside the container, you can enable the `desktop-lite` feature and specify the `webPort` in your `.devcontainer/devcontainer.json` file:
 
 ```json
 {
@@ -234,7 +234,7 @@ Browser builds for Firefox and WebKit are built for the [glibc](https://en.wikip
 ## Using a different .NET version
 * langs: csharp
 
-You can use the [.NET install script](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script) in order to install different SDK versions:
+You can use the [.NET installation script](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script) in order to install different SDK versions:
 
 ```bash
 curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --install-dir /usr/share/dotnet --channel 9.0

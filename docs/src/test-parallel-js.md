@@ -64,7 +64,7 @@ test('runs in parallel 1', async ({ page }) => { /* ... */ });
 test('runs in parallel 2', async ({ page }) => { /* ... */ });
 ```
 
-Alternatively, you can opt-in all tests into this fully-parallel mode in the configuration file:
+Alternatively, you can opt in all tests into this fully-parallel mode in the configuration file:
 
 ```js title="playwright.config.ts"
 import { defineConfig } from '@playwright/test';
@@ -127,7 +127,7 @@ test('runs second', async () => {
 
 ## Opt out of fully parallel mode
 
-If your configuration applies parallel mode to all tests using [`property: TestConfig.fullyParallel`], you might still want to run some tests with default settings. You can override the mode per describe: 
+If your configuration applies parallel mode to all tests using [`property: TestConfig.fullyParallel`], you might still want to run some tests with default settings. You can override the mode per describe:
 ```js
 test.describe('runs in parallel with other describes', () => {
   test.describe.configure({ mode: 'default' });

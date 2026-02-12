@@ -36,7 +36,7 @@ Playwright will look at your page and figure out the best locator, prioritizing 
 
 ### Run in Debug Mode
 
-To set a breakpoint click next to the line number where you want the breakpoint to be until a red dot appears. Run the tests in debug mode by right clicking on the line next to the test you want to run.
+To set a breakpoint click next to the line number where you want the breakpoint to be until a red dot appears. Run the tests in debug mode by right-clicking on the line next to the test you want to run.
 
 <img width="1269" alt="setting debug test mode" src="https://user-images.githubusercontent.com/13063165/212739847-ecb7dcfe-8929-45f3-b24e-f9c4b592f430.png" />
 
@@ -50,11 +50,11 @@ Instead of using `Debug Test`, choose `Run Test` in VS Code. With `Show Browser`
 
 ### Debug in different Browsers
 
-By default, debugging is done using the Chromium profile. You can debug your tests on different browsers by right clicking on the debug icon in the testing sidebar and clicking on the 'Select Default Profile' option from the dropdown.
+By default, debugging is done using the Chromium profile. You can debug your tests on different browsers by right-clicking on the debug icon in the testing sidebar and clicking on the 'Select Default Profile' option from the dropdown.
 
 <img width="1312" alt="debugging on specific profile" src="https://user-images.githubusercontent.com/13063165/212879469-436f8130-c62a-49e1-9d67-c1903b478d5f.png" />
 
-Then choose the test profile you would like to use for debugging your tests. Each time you run your test in debug mode it will use the profile you selected. You can run tests in debug mode by right clicking the line number where your test is and selecting 'Debug Test' from the menu.
+Then choose the test profile you would like to use for debugging your tests. Each time you run your test in debug mode it will use the profile you selected. You can run tests in debug mode by right-clicking the line number where your test is and selecting 'Debug Test' from the menu.
 
 <img width="1312" alt="choosing a profile for debugging" src="https://user-images.githubusercontent.com/13063165/212880198-eac22c3e-68ce-47da-9163-d6b376ae7575.png" />
 

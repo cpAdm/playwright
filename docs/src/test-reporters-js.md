@@ -24,7 +24,7 @@ export default defineConfig({
 
 ### Multiple reporters
 
-You can use multiple reporters at the same time. For example  you can use `'list'` for nice terminal output and `'json'` to get a comprehensive json file with the test results.
+You can use multiple reporters at the same time. For example, you can use `'list'` for nice terminal output and `'json'` to get a comprehensive JSON file with the test results.
 
 ```js title="playwright.config.ts"
 import { defineConfig } from '@playwright/test';
@@ -99,11 +99,11 @@ export default defineConfig({
 
 List report supports the following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_LIST_PRINT_STEPS` | `printSteps` | Whether to print each step on its own line. | `false`
-| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise.
-| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise.
+| `PLAYWRIGHT_LIST_PRINT_STEPS` | `printSteps` | Whether to print each step on its own line. | `false` |
+| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise. |
+| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise. |
 
 
 ### Line reporter
@@ -138,10 +138,10 @@ Running 124 tests using 6 workers
 
 Line report supports the following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise.
-| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise.
+| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise. |
+| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise. |
 
 
 ### Dot reporter
@@ -169,21 +169,21 @@ Running 124 tests using 6 workers
 
 One character is displayed for each test that has run, indicating its status:
 
-| Character | Description
+| Character | Description |
 |---|---|
-| `·` | Passed
-| `F` | Failed
-| `×` | Failed or timed out - and will be retried
-| `±` | Passed on retry (flaky)
-| `T` | Timed out
-| `°` | Skipped
+| `·` | Passed |
+| `F` | Failed |
+| `×` | Failed or timed out - and will be retried |
+| `±` | Passed on retry (flaky) |
+| `T` | Timed out |
+| `°` | Skipped |
 
 Dot report supports the following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise.
-| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise.
+| `PLAYWRIGHT_FORCE_TTY` | | Whether to produce output suitable for a live terminal. Supports `true`, `1`, `false`, `0`, `[WIDTH]`, and `[WIDTH]x[HEIGHT]`. `[WIDTH]` and `[WIDTH]x[HEIGHT]` specifies the TTY dimensions. | `true` when terminal is in TTY mode, `false` otherwise. |
+| `FORCE_COLOR` | | Whether to produce colored output. | `true` when terminal is in TTY mode, `false` otherwise. |
 
 ### HTML reporter
 
@@ -220,7 +220,7 @@ export default defineConfig({
 });
 ```
 
-If you are uploading attachments from a data folder to another location, you can use `attachmentsBaseURL` option to let html report know where to look for them.
+If you are uploading attachments from a data folder to another location, you can use `attachmentsBaseURL` option to let HTML report know where to look for them.
 
 ```js title="playwright.config.ts"
 import { defineConfig } from '@playwright/test';
@@ -244,16 +244,16 @@ npx playwright show-report my-report
 
 HTML report supports the following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_HTML_TITLE` | `title` | A title to display in the generated report. | No title is displayed by default
-| `PLAYWRIGHT_HTML_OUTPUT_DIR` | `outputFolder` | Directory to save the report to. | `playwright-report`
-| `PLAYWRIGHT_HTML_OPEN` | `open` | When to open the html report in the browser, one of `'always'`, `'never'` or `'on-failure'` | `'on-failure'`
-| `PLAYWRIGHT_HTML_HOST` | `host` | When report opens in the browser, it will be served bound to this hostname. | `localhost`
-| `PLAYWRIGHT_HTML_PORT` | `port` | When report opens in the browser, it will be served on this port. | `9323` or any available port when `9323` is not available.
-| `PLAYWRIGHT_HTML_ATTACHMENTS_BASE_URL` | `attachmentsBaseURL` | A separate location where attachments from the `data` subdirectory are uploaded. Only needed when you upload report and `data` separately to different locations. | `data/`
-| `PLAYWRIGHT_HTML_NO_COPY_PROMPT` | `noCopyPrompt` | If true, disable rendering of the Copy prompt for errors. Supports `true`, `1`, `false`, and `0`. | `false`
-| `PLAYWRIGHT_HTML_NO_SNIPPETS` | `noSnippets` | If true, disable rendering code snippets in the action log. If there is a top level error, that report section with code snippet will still render. Supports `true`, `1`, `false`, and `0`. | `false`
+| `PLAYWRIGHT_HTML_TITLE` | `title` | A title to display in the generated report. | No title is displayed by default |
+| `PLAYWRIGHT_HTML_OUTPUT_DIR` | `outputFolder` | Directory to save the report to. | `playwright-report` |
+| `PLAYWRIGHT_HTML_OPEN` | `open` | When to open the html report in the browser, one of `'always'`, `'never'` or `'on-failure'` | `'on-failure'` |
+| `PLAYWRIGHT_HTML_HOST` | `host` | When report opens in the browser, it will be served bound to this hostname. | `localhost` |
+| `PLAYWRIGHT_HTML_PORT` | `port` | When report opens in the browser, it will be served on this port. | `9323` or any available port when `9323` is not available. |
+| `PLAYWRIGHT_HTML_ATTACHMENTS_BASE_URL` | `attachmentsBaseURL` | A separate location where attachments from the `data` subdirectory are uploaded. Only needed when you upload report and `data` separately to different locations. | `data/` |
+| `PLAYWRIGHT_HTML_NO_COPY_PROMPT` | `noCopyPrompt` | If true, disable rendering of the Copy prompt for errors. Supports `true`, `1`, `false`, and `0`. | `false` |
+| `PLAYWRIGHT_HTML_NO_SNIPPETS` | `noSnippets` | If true, disable rendering code snippets in the action log. If there is a top level error, that report section with code snippet will still render. Supports `true`, `1`, `false`, and `0`. | `false` |
 
 ### Blob reporter
 
@@ -309,11 +309,11 @@ export default defineConfig({
 
 Blob report supports following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_BLOB_OUTPUT_DIR` | `outputDir` | Directory to save the output. Existing content is deleted before writing the new report. | `blob-report`
-| `PLAYWRIGHT_BLOB_OUTPUT_NAME` | `fileName` | Report file name. | `report-<project>-<hash>-<shard_number>.zip`
-| `PLAYWRIGHT_BLOB_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `outputDir` and `fileName` will be ignored. | `undefined`
+| `PLAYWRIGHT_BLOB_OUTPUT_DIR` | `outputDir` | Directory to save the output. Existing content is deleted before writing the new report. | `blob-report` |
+| `PLAYWRIGHT_BLOB_OUTPUT_NAME` | `fileName` | Report file name. | `report-<project>-<hash>-<shard_number>.zip` |
+| `PLAYWRIGHT_BLOB_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `outputDir` and `fileName` will be ignored. | `undefined` |
 
 ### JSON reporter
 
@@ -347,17 +347,17 @@ export default defineConfig({
 
 JSON report supports following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_JSON_OUTPUT_DIR` | | Directory to save the output file. Ignored if output file is specified. | `cwd` or config directory.
-| `PLAYWRIGHT_JSON_OUTPUT_NAME` | `outputFile` | Base file name for the output, relative to the output dir. | JSON report is printed to the stdout.
-| `PLAYWRIGHT_JSON_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `PLAYWRIGHT_JSON_OUTPUT_DIR` and `PLAYWRIGHT_JSON_OUTPUT_NAME` will be ignored. | JSON report is printed to the stdout.
+| `PLAYWRIGHT_JSON_OUTPUT_DIR` | | Directory to save the output file. Ignored if output file is specified. | `cwd` or config directory. |
+| `PLAYWRIGHT_JSON_OUTPUT_NAME` | `outputFile` | Base file name for the output, relative to the output dir. | JSON report is printed to the stdout. |
+| `PLAYWRIGHT_JSON_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `PLAYWRIGHT_JSON_OUTPUT_DIR` and `PLAYWRIGHT_JSON_OUTPUT_NAME` will be ignored. | JSON report is printed to the stdout. |
 
 ### JUnit reporter
 
-JUnit reporter produces a JUnit-style xml report.
+JUnit reporter produces a JUnit-style XML report.
 
-Most likely you want to write the report to an xml file. When running with `--reporter=junit`, use `PLAYWRIGHT_JUNIT_OUTPUT_NAME` environment variable:
+Most likely you want to write the report to an XML file. When running with `--reporter=junit`, use `PLAYWRIGHT_JUNIT_OUTPUT_NAME` environment variable:
 
 ```bash tab=bash-bash
 PLAYWRIGHT_JUNIT_OUTPUT_NAME=results.xml npx playwright test --reporter=junit
@@ -385,15 +385,15 @@ export default defineConfig({
 
 JUnit report supports following configuration options and environment variables:
 
-| Environment Variable Name | Reporter Config Option| Description | Default
+| Environment Variable Name | Reporter Config Option| Description | Default |
 |---|---|---|---|
-| `PLAYWRIGHT_JUNIT_OUTPUT_DIR` | | Directory to save the output file. Ignored if output file is not specified. | `cwd` or config directory.
-| `PLAYWRIGHT_JUNIT_OUTPUT_NAME` | `outputFile` | Base file name for the output, relative to the output dir. | JUnit report is printed to the stdout.
-| `PLAYWRIGHT_JUNIT_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `PLAYWRIGHT_JUNIT_OUTPUT_DIR` and `PLAYWRIGHT_JUNIT_OUTPUT_NAME` will be ignored. | JUnit report is printed to the stdout.
-| `PLAYWRIGHT_JUNIT_STRIP_ANSI` | `stripANSIControlSequences` | Whether to remove ANSI control sequences from the text before writing it in the report. | By default output text is added as is.
-| `PLAYWRIGHT_JUNIT_INCLUDE_PROJECT_IN_TEST_NAME` | `includeProjectInTestName` | Whether to include Playwright project name in every test case as a name prefix. | By default not included.
-| `PLAYWRIGHT_JUNIT_SUITE_ID` |  | Value of the `id` attribute on the root `<testsuites/>` report entry. | Empty string.
-| `PLAYWRIGHT_JUNIT_SUITE_NAME` |  | Value of the `name` attribute on the root `<testsuites/>` report entry. | Empty string.
+| `PLAYWRIGHT_JUNIT_OUTPUT_DIR` | | Directory to save the output file. Ignored if output file is not specified. | `cwd` or config directory. |
+| `PLAYWRIGHT_JUNIT_OUTPUT_NAME` | `outputFile` | Base file name for the output, relative to the output dir. | JUnit report is printed to the stdout. |
+| `PLAYWRIGHT_JUNIT_OUTPUT_FILE` | `outputFile` | Full path to the output file. If defined, `PLAYWRIGHT_JUNIT_OUTPUT_DIR` and `PLAYWRIGHT_JUNIT_OUTPUT_NAME` will be ignored. | JUnit report is printed to the stdout. |
+| `PLAYWRIGHT_JUNIT_STRIP_ANSI` | `stripANSIControlSequences` | Whether to remove ANSI control sequences from the text before writing it in the report. | By default output text is added as is. |
+| `PLAYWRIGHT_JUNIT_INCLUDE_PROJECT_IN_TEST_NAME` | `includeProjectInTestName` | Whether to include Playwright project name in every test case as a name prefix. | By default not included. |
+| `PLAYWRIGHT_JUNIT_SUITE_ID` |  | Value of the `id` attribute on the root `<testsuites/>` report entry. | Empty string. |
+| `PLAYWRIGHT_JUNIT_SUITE_NAME` |  | Value of the `name` attribute on the root `<testsuites/>` report entry. | Empty string. |
 
 ### GitHub Actions annotations
 
@@ -462,7 +462,7 @@ npx playwright test --reporter="./myreporter/my-awesome-reporter.ts"
 Here's a short list of open source reporter implementations that you can take a look at when writing your own reporter:
 
 * [Allure Reporter](https://github.com/allure-framework/allure-js/tree/main/packages/allure-playwright)
-* [Github Actions Reporter](https://github.com/estruyf/playwright-github-actions-reporter)
+* [GitHub Actions Reporter](https://github.com/estruyf/playwright-github-actions-reporter)
 * [Mail Reporter](https://github.com/estruyf/playwright-mail-reporter)
 * [ReportPortal](https://github.com/reportportal/agent-js-playwright)
 * [Monocart](https://github.com/cenfun/monocart-reporter)

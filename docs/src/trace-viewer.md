@@ -7,7 +7,7 @@ import LiteYouTube from '@site/src/components/LiteYouTube';
 
 ## Introduction
 
-Playwright Trace Viewer is a GUI tool that helps you explore recorded Playwright traces after the script has run. Traces are a great way for debugging your tests when they fail on CI. You can open traces [locally](#opening-the-trace) or in your browser on [trace.playwright.dev](https://trace.playwright.dev).
+Playwright Trace Viewer is a GUI tool that helps you explore recorded Playwright traces after the script has run. Traces are a great way for debugging your tests when they fail on CI. You can open traces [locally](#opening-trace-viewer) or in your browser on [trace.playwright.dev](https://trace.playwright.dev).
 
 ######
 * langs: js
@@ -448,7 +448,7 @@ This will record the trace and place it into the `bin/Debug/net8.0/playwright-tr
 ## Run trace only on failure
 * langs: csharp
 
-Setup your tests to record a trace only when the test fails:
+Set up your tests to record a trace only when the test fails:
 
 <Tabs
   groupId="test-runners"
@@ -697,9 +697,9 @@ In the Actions tab you can see what locator was used for every action and how lo
 
 ### Screenshots
 
-When tracing with the [`option: Tracing.start.screenshots`] option turned on (default), each trace records a screencast and renders it as a film strip. You can hover over the film strip to see a magnified image of for each action and state which helps you easily find the action you want to inspect.
+When tracing with the [`option: Tracing.start.screenshots`] option turned on (default), each trace records a screencast and renders it as a filmstrip. You can hover over the filmstrip to see a magnified image of for each action and state which helps you easily find the action you want to inspect.
 
-Double click on an action to see the time range for that action. You can use the slider in the timeline to increase the actions selected and these will be shown in the Actions tab and all console logs and network logs will be filtered to only show the logs for the actions selected.
+Double-click on an action to see the time range for that action. You can use the slider in the timeline to increase the actions selected and these will be shown in the Actions tab and all console logs and network logs will be filtered to only show the logs for the actions selected.
 
 ![timeline view in trace viewer](https://github.com/microsoft/playwright/assets/13063165/b04a7d75-54bb-4ab2-9e30-e76f6f74a2c8)
 
@@ -718,7 +718,7 @@ Here is what the typical Action snapshot looks like:
 
 ![action tab in trace viewer](https://github.com/microsoft/playwright/assets/13063165/7168d549-eb0a-4964-9c93-483f03711fa9)
 
-Notice how it highlights both, the DOM Node as well as the exact click position.
+Notice how it highlights both, the DOM Node and the exact click position.
 
 ### Source
 
@@ -750,7 +750,7 @@ See console logs from the browser as well as from your test. Different icons are
 
 ![showing log of tests in trace viewer](https://github.com/microsoft/playwright/assets/13063165/4107c08d-1eaf-421c-bdd4-9dd2aa641d4a)
 
-Double click on an action from your test in the actions sidebar. This will filter the console to only show the logs that were made during that action. Click the *Show all* button to see all console logs again.
+Double-click on an action from your test in the actions' sidebar. This will filter the console to only show the logs that were made during that action. Click the *Show all* button to see all console logs again.
 
 Use the timeline to filter actions, by clicking a start point and dragging to an ending point. The console tab will also be filtered to only show the logs that were made during the actions selected.
 
@@ -761,7 +761,7 @@ The Network tab shows you all the network requests that were made during your te
 
 ![network requests tab in trace viewer](https://github.com/microsoft/playwright/assets/13063165/0a3d1671-8ccd-4f7a-a844-35f5eb37f236)
 
-Double click on an action from your test in the actions sidebar. This will filter the network requests to only show the requests that were made during that action. Click the *Show all* button to see all network requests again.
+Double-click on an action from your test in the actions' sidebar. This will filter the network requests to only show the requests that were made during that action. Click the *Show all* button to see all network requests again.
 
 Use the timeline to filter actions, by clicking a start point and dragging to an ending point. The network tab will also be filtered to only show the network requests that were made during the actions selected.
 

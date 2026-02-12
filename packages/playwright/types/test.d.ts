@@ -558,7 +558,7 @@ interface TestProject<TestArgs = {}, WorkerArgs = {}> {
 
   /**
    * Name of a project that needs to run after this and all dependent projects have finished. Teardown is useful to
-   * cleanup any resources acquired by this project.
+   * clean up any resources acquired by this project.
    *
    * Passing `--no-deps` argument ignores
    * [testProject.teardown](https://playwright.dev/docs/api/class-testproject#test-project-teardown) and behaves as if
@@ -937,7 +937,7 @@ interface TestConfig<TestArgs = {}, WorkerArgs = {}> {
    *
    * **NOTE** It is also recommended to specify
    * [testOptions.baseURL](https://playwright.dev/docs/api/class-testoptions#test-options-base-url) in the config, so
-   * that tests could use relative urls.
+   * that tests could use relative URLs.
    *
    * **Usage**
    *
@@ -1599,7 +1599,7 @@ interface TestConfig<TestArgs = {}, WorkerArgs = {}> {
   respectGitIgnore?: boolean;
 
   /**
-   * The maximum number of retry attempts given to failed tests. By default failing tests are not retried. Learn more
+   * The maximum number of retry attempts given to failed tests. By default, failing tests are not retried. Learn more
    * about [test retries](https://playwright.dev/docs/test-retries#retries).
    *
    * **Usage**
@@ -2260,7 +2260,7 @@ export interface TestInfo {
    *
    * **NOTE** [testInfo.attach(name[, options])](https://playwright.dev/docs/api/class-testinfo#test-info-attach)
    * automatically takes care of copying attached files to a location that is accessible to reporters. You can safely
-   * remove the attachment after awaiting the attach call.
+   * remove the attachment after awaiting the `attach` call.
    *
    * @param name Attachment name. The name will also be sanitized and used as the prefix of file name when saving to disk.
    * @param options
@@ -4138,8 +4138,8 @@ export interface TestType<TestArgs extends {}, WorkerArgs extends {}> {
     };
 
     /**
-     * Configures the enclosing scope. Can be executed either on the top level or inside a describe. Configuration applies
-     * to the entire scope, regardless of whether it run before or after the test declaration.
+     * Configures the enclosing scope. Can be executed either on the top level or inside a `describe`. Configuration
+     * applies to the entire scope, regardless of whether it run before or after the test declaration.
      *
      * Learn more about the execution modes [here](https://playwright.dev/docs/test-parallel).
      *
@@ -7245,7 +7245,7 @@ export interface PlaywrightTestOptions {
    */
   isMobile: boolean;
   /**
-   * Whether or not to enable JavaScript in the context. Defaults to `true`. Learn more about
+   * Whether to enable JavaScript in the context. Defaults to `true`. Learn more about
    * [disabling JavaScript](https://playwright.dev/docs/emulation#javascript-enabled).
    *
    * **Usage**
@@ -7420,7 +7420,7 @@ export interface PlaywrightTestOptions {
    */
   userAgent: string | undefined;
   /**
-   * Emulates consistent viewport for each page. Defaults to an 1280x720 viewport. Use `null` to disable the consistent
+   * Emulates consistent viewport for each page. Defaults to a 1280x720 viewport. Use `null` to disable the consistent
    * viewport emulation. Learn more about [viewport emulation](https://playwright.dev/docs/emulation#viewport).
    *
    * **NOTE** The `null` value opts out from the default presets, makes viewport depend on the host window size defined
@@ -7587,7 +7587,7 @@ export interface PlaywrightTestOptions {
  * Playwright Test is based on the concept of the [test fixtures](https://playwright.dev/docs/test-fixtures). Test fixtures are used to
  * establish environment for each test, giving the test everything it needs and nothing else.
  *
- * Playwright Test looks at each test declaration, analyses the set of fixtures the test needs and prepares those
+ * Playwright Test looks at each test declaration, analyzes the set of fixtures the test needs and prepares those
  * fixtures specifically for the test. Values prepared by the fixtures are merged into a single object that is
  * available to the `test`, hooks, annotations and other fixtures as a first parameter.
  *
@@ -7636,7 +7636,7 @@ export interface PlaywrightWorkerArgs {
  * Playwright Test is based on the concept of the [test fixtures](https://playwright.dev/docs/test-fixtures). Test fixtures are used to
  * establish environment for each test, giving the test everything it needs and nothing else.
  *
- * Playwright Test looks at each test declaration, analyses the set of fixtures the test needs and prepares those
+ * Playwright Test looks at each test declaration, analyzes the set of fixtures the test needs and prepares those
  * fixtures specifically for the test. Values prepared by the fixtures are merged into a single object that is
  * available to the `test`, hooks, annotations and other fixtures as a first parameter.
  *
@@ -7780,7 +7780,7 @@ interface AsymmetricMatchers {
    */
   anything(): AsymmetricMatcher;
   /**
-   * `expect.arrayContaining()` matches an array that contains all of the elements in the expected array, in any order.
+   * `expect.arrayContaining()` matches an array that contains all the elements in the expected array, in any order.
    * Note that received array may be a superset of the expected array and contain some extra elements.
    *
    * Use this method inside
@@ -7836,8 +7836,8 @@ interface AsymmetricMatchers {
    */
   closeTo(sample: number, precision?: number): AsymmetricMatcher;
   /**
-   * `expect.objectContaining()` matches an object that contains and matches all of the properties in the expected
-   * object. Note that received object may be a superset of the expected object and contain some extra properties.
+   * `expect.objectContaining()` matches an object that contains and matches all the properties in the expected object.
+   * Note that received object may be a superset of the expected object and contain some extra properties.
    *
    * Use this method inside
    * [expect(value).toEqual(expected)](https://playwright.dev/docs/api/class-genericassertions#generic-assertions-to-equal)
@@ -9142,7 +9142,7 @@ interface LocatorAssertions {
     omitBackground?: boolean;
 
     /**
-     * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+     * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
      * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
      * screenshots of high-dpi devices will be twice as large or even larger.
      *
@@ -9152,7 +9152,7 @@ interface LocatorAssertions {
 
     /**
      * File name containing the stylesheet to apply while making the screenshot. This is where you can hide dynamic
-     * elements, make elements invisible or change their properties to help you creating repeatable screenshots. This
+     * elements, make elements invisible or change their properties to help you create repeatable screenshots. This
      * stylesheet pierces the Shadow DOM and applies to the inner frames.
      */
     stylePath?: string|Array<string>;
@@ -9235,7 +9235,7 @@ interface LocatorAssertions {
     omitBackground?: boolean;
 
     /**
-     * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+     * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
      * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
      * screenshots of high-dpi devices will be twice as large or even larger.
      *
@@ -9245,7 +9245,7 @@ interface LocatorAssertions {
 
     /**
      * File name containing the stylesheet to apply while making the screenshot. This is where you can hide dynamic
-     * elements, make elements invisible or change their properties to help you creating repeatable screenshots. This
+     * elements, make elements invisible or change their properties to help you create repeatable screenshots. This
      * stylesheet pierces the Shadow DOM and applies to the inner frames.
      */
     stylePath?: string|Array<string>;
@@ -9795,7 +9795,7 @@ interface SnapshotAssertions {
    * instead.
    *
    * Ensures that passed value, either a [string] or a [Buffer], matches the expected snapshot stored in the test
-   * snapshots directory.
+   * snapshots' directory.
    *
    * **Usage**
    *
@@ -9849,7 +9849,7 @@ interface SnapshotAssertions {
    * instead.
    *
    * Ensures that passed value, either a [string] or a [Buffer], matches the expected snapshot stored in the test
-   * snapshots directory.
+   * snapshots' directory.
    *
    * **Usage**
    *
@@ -10004,7 +10004,7 @@ export interface TestStepInfo {
    * **NOTE**
    * [testStepInfo.attach(name[, options])](https://playwright.dev/docs/api/class-teststepinfo#test-step-info-attach)
    * automatically takes care of copying attached files to a location that is accessible to reporters. You can safely
-   * remove the attachment after awaiting the attach call.
+   * remove the attachment after awaiting the `attach` call.
    *
    * @param name Attachment name. The name will also be sanitized and used as the prefix of file name when saving to disk.
    * @param options
@@ -10200,7 +10200,7 @@ export interface PageAssertionsToHaveScreenshotOptions {
   omitBackground?: boolean;
 
   /**
-   * When set to `"css"`, screenshot will have a single pixel per each css pixel on the page. For high-dpi devices, this
+   * When set to `"css"`, screenshot will have a single pixel per each CSS pixel on the page. For high-dpi devices, this
    * will keep screenshots small. Using `"device"` option will produce a single pixel per each device pixel, so
    * screenshots of high-dpi devices will be twice as large or even larger.
    *
@@ -10210,7 +10210,7 @@ export interface PageAssertionsToHaveScreenshotOptions {
 
   /**
    * File name containing the stylesheet to apply while making the screenshot. This is where you can hide dynamic
-   * elements, make elements invisible or change their properties to help you creating repeatable screenshots. This
+   * elements, make elements invisible or change their properties to help you create repeatable screenshots. This
    * stylesheet pierces the Shadow DOM and applies to the inner frames.
    */
   stylePath?: string|Array<string>;

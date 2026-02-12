@@ -65,7 +65,7 @@ export default defineConfig({
 
 ## Adding a baseURL
 
-It is also recommended to specify the `baseURL` in the `use: {}` section of your config, so that tests can use relative urls and you don't have to specify the full URL over and over again. 
+It is also recommended to specify the `baseURL` in the `use: {}` section of your config, so that tests can use relative URLs and you don't have to specify the full URL over and over again.
 
 When using [`method: Page.goto`], [`method: Page.route`], [`method: Page.waitForURL`], [`method: Page.waitForRequest`], or [`method: Page.waitForResponse`] it takes the base URL in consideration by using the [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL. For Example, by setting the baseURL to `http://localhost:3000` and navigating to `/login` in your tests, Playwright will run the test using `http://localhost:3000/login`.
 

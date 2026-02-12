@@ -60,7 +60,7 @@ This scheme works perfectly for independent tests and guarantees that failing te
 
 ## Retries
 
-Playwright supports **test retries**. When enabled, failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached. By default failing tests are not retried.
+Playwright supports **test retries**. When enabled, failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached. By default, failing tests are not retried.
 
 ```bash
 # Give failing tests 3 retry attempts

@@ -269,7 +269,7 @@ existing authentication state instead.
 * langs: java, csharp, python
 
 Playwright provides a way to reuse the signed-in state in the tests. That way you can log
-in only once and then skip the log in step for all of the tests.
+in only once and then skip the log in step for all the tests.
 
 Web apps use cookie-based or token-based authentication, where authenticated state is stored as [cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies), in [local storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage) or in [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API). Playwright provides [`method: BrowserContext.storageState`] method that can be used to retrieve storage state from authenticated contexts and then create new contexts with prepopulated state.
 
@@ -401,7 +401,7 @@ export const test = baseTest.extend<{}, { workerStorageState: string }>({
 * langs: js
 
 **When to use**
-- You have more than one role in your end to end tests, but you can reuse accounts across all tests.
+- You have more than one role in your end-to-end tests, but you can reuse accounts across all tests.
 
 **Details**
 

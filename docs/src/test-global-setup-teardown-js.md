@@ -86,7 +86,7 @@ test('menu', async ({ page }) => {
 
 ### Teardown
 
-You can teardown your setup by adding a [`property: TestProject.teardown`] property to your setup project. This will run after all dependent projects have run.
+You can tear down your setup by adding a [`property: TestProject.teardown`] property to your setup project. This will run after all dependent projects have run.
 
 First we add the [`property: TestProject.teardown`] property to our setup project with the name 'cleanup db' which is the name we gave to our teardown project in the previous step:
 

@@ -269,7 +269,7 @@ playwright.close();
 * langs: java
 - `env` <[Object]<[string], [string]>>
 
-Additional environment variables that will be passed to the driver process. By default driver
+Additional environment variables that will be passed to the driver process. By default, driver
 process inherits environment variables of the Playwright process.
 
 ## async method: Playwright.stop

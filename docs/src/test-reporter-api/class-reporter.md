@@ -155,7 +155,7 @@ The error.
 
 Called immediately before test runner exists. At this point all the reporters
 have received the [`method: Reporter.onEnd`] signal, so all the reports should
-be build. You can run the code that uploads the reports in this hook.
+be built. You can run the code that uploads the reports in this hook.
 
 ## optional method: Reporter.onStdErr
 * since: v1.10

@@ -374,7 +374,7 @@ await page.EvaluateAsync("x => x.button1.textContent + x.list[0].textContent + S
 
 ## Init scripts
 
-Sometimes it is convenient to evaluate something in the page before it starts loading. For example, you might want to setup some mocks or test data.
+Sometimes it is convenient to evaluate something in the page before it starts loading. For example, you might want to set up some mocks or test data.
 
 In this case, use [`method: Page.addInitScript`] or [`method: BrowserContext.addInitScript`]. In the example below, we will replace `Math.random()` with a constant value.
 

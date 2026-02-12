@@ -15,7 +15,7 @@ battery status.
 
 ## Creating mocks
 
-Since the page may be calling the API very early while loading it's important to setup all the mocks before the page started loading. The easiest way to achieve that is to call [`method: Page.addInitScript`]:
+Since the page may be calling the API very early while loading it's important to set up all the mocks before the page started loading. The easiest way to achieve that is to call [`method: Page.addInitScript`]:
 
 ```js
 await page.addInitScript(() => {

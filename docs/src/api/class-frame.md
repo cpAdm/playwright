@@ -295,13 +295,13 @@ Gets the full HTML contents of the frame, including the doctype.
 * langs:
   - alias-csharp: DblClickAsync
 
-This method double clicks an element matching [`param: selector`] by performing the following steps:
+This method double-clicks an element matching [`param: selector`] by performing the following steps:
 1. Find an element matching [`param: selector`]. If there is none, wait until a matching element is attached to
    the DOM.
 1. Wait for [actionability](../actionability.md) checks on the matched element, unless [`option: force`] option is
    set. If the element is detached during the checks, the whole action is retried.
 1. Scroll the element into view if needed.
-1. Use [`property: Page.mouse`] to double click in the center of the element, or the specified [`option: position`].
+1. Use [`property: Page.mouse`] to double-click in the center of the element, or the specified [`option: position`].
    if the first click of the `dblclick()` triggers a navigation event, this method will throw.
 
 When all steps combined have not finished during the specified [`option: timeout`], this method throws a

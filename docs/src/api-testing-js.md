@@ -110,7 +110,7 @@ test('should create a feature request', async ({ request }) => {
 
 ### Setup and teardown
 
-These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterwards. Use `beforeAll` and `afterAll` hooks for that.
+These tests assume that repository exists. You probably want to create a new one before running tests and delete it afterward. Use `beforeAll` and `afterAll` hooks for that.
 
 ```js
 test.beforeAll(async ({ request }) => {

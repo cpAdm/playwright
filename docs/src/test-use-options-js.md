@@ -125,7 +125,7 @@ You don't have to configure anything to mock network requests. Just define a cus
 
 ### Recording Options
 
-With Playwright you can capture screenshots, record videos as well as traces of your test. By default these are turned off but you can enable them by setting the `screenshot`, `video` and `trace` options in your `playwright.config.js` file.
+With Playwright you can capture screenshots, record videos as well as traces of your test. By default, these are turned off, but you can enable them by setting the `screenshot`, `video` and `trace` options in your `playwright.config.js` file.
 
 Trace files, screenshots and videos will appear in the test output directory, typically `test-results`.
 
