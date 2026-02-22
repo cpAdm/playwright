@@ -412,7 +412,7 @@ export class TestInfoImpl implements TestInfo {
     if (step && step.boxedStack)
       serialized.stack = `${(error as Error).name}: ${(error as Error).message}\n${stringifyStackFrames(step.boxedStack).join('\n')}`;
     this.errors.push(serialized);
-    this._tracing.appendForError(serialized);
+    this._tracing.appendForError(serialized, error);
   }
 
   async _runAsStep(stepInfo: { title: string, category: 'hook' | 'fixture', location?: Location, group?: string }, cb: () => Promise<any>) {

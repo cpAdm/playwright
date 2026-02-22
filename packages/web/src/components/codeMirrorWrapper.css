@@ -189,3 +189,52 @@
 .CodeMirror-dialog-top {
   padding-top: 8px !important;
 }
+
+/* Container for merge editors side by side */
+.codemirror-merge-view {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 0; /* Or set to e.g. 8px for a gap between editors */
+}
+
+/* Each individual CodeMirror instance inside the merge view */
+.codemirror-merge-view .cm-wrapper,
+.codemirror-merge-view .CodeMirror {
+  width: 100%;
+  /* Each editor takes half */
+  flex: 1 1 0;
+  /* Remove outer margin/border if present */
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Optional: border between editors */
+.codemirror-merge-view .cm-wrapper:not(:last-child),
+.codemirror-merge-view .CodeMirror:not(:last-child) {
+  border-right: 1px solid var(--vscode-editorGroup-border, #ddd);
+}
+
+
+
+/* Minimal styles for MergeView diff highlighting */
+.CodeMirror-merge-gap {
+  background: #f0f0f0;
+  width: 8px;
+}
+
+.CodeMirror-merge-r-inserted,
+.CodeMirror-merge-l-inserted {
+  background-color: #e6ffed; /* green-ish */
+}
+
+.CodeMirror-merge-r-deleted,
+.CodeMirror-merge-l-deleted {
+  background-color: #ffeef0; /* red-ish */
+}
+
+.CodeMirror-merge-r-chunk,
+.CodeMirror-merge-l-chunk {
+  background-color: #fff5b1; /* yellow-ish chunk bg */
+}

@@ -238,13 +238,20 @@ export class TestTracing {
     this._testInfo.attachments.push({ name: 'trace', path: tracePath, contentType: 'application/zip' });
   }
 
-  appendForError(error: TestInfoErrorImpl) {
+  appendForError(error: TestInfoErrorImpl, rawError: unknown) {
     const rawStack = error.stack?.split('\n') || [];
     const stack = rawStack ? filteredStackTrace(rawStack) : [];
+    const isExpectError = (rawError instanceof Error) && !!(rawError as any).matcherResult;
+    const actual = isExpectError ? (rawError as any).matcherResult.actual : undefined;
+    const expected = isExpectError ? (rawError as any).matcherResult.expected : undefined;
     this._appendTraceEvent({
       type: 'error',
       message: this._formatError(error),
       stack,
+      matcherResult: isExpectError ? {
+        actual: JSON.stringify(actual?.raw ?? actual, null, 2),
+        expected: JSON.stringify(expected, null, 2),
+      } : undefined,
     });
   }
 
@@ -327,8 +334,14 @@ function generatePreview(value: any, visited = new Set<any>()): string {
     return 'undefined';
   if (Array.isArray(value))
     return '[' + value.map(v => generatePreview(v, visited)).join(', ') + ']';
-  if (typeof value === 'object')
-    return 'Object';
+  if (typeof value === 'object') {
+    try {
+      // todo dont do this for regexps, maps, sets, etc.
+      return JSON.stringify(value);
+    } catch {
+      return String(value);
+    }
+  }
   return String(value);
 }
 

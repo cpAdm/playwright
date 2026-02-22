@@ -281,5 +281,9 @@ self.addEventListener('fetch', function(event: FetchEvent) {
   if (event.request.headers.get('x-pw-serviceworker') === 'skip')
     return false;
 
+  // TODO remove; see comment in index.html
+  if (event.request.url.startsWith('https://cdnjs.cloudflare.com'))
+    return;
+
   event.respondWith(doFetch(event));
 });

@@ -27,7 +27,7 @@ export type SourceHighlight = {
   message?: string;
 };
 
-type CodeMirrorHighlighter = 'javascript' | 'python' | 'java' | 'csharp' | 'jsonl' | 'html' | 'css' | 'markdown' | 'yaml';
+export type CodeMirrorHighlighter = 'javascript' | 'python' | 'java' | 'csharp' | 'jsonl' | 'html' | 'css' | 'markdown' | 'yaml';
 
 export const lineHeight = 20;
 
@@ -231,7 +231,7 @@ function defineCustomMode(cm: CodeMirror) {
   });
 }
 
-function mimeTypeToMode(mimeType: string | undefined): string | undefined {
+export function mimeTypeToMode(mimeType: string | undefined): string | undefined {
   if (!mimeType)
     return;
   if (mimeType.includes('javascript') || mimeType.includes('json'))
@@ -248,9 +248,11 @@ function mimeTypeToMode(mimeType: string | undefined): string | undefined {
     return 'htmlmixed';
   if (mimeType.includes('css'))
     return 'css';
+  if (mimeType.includes('yaml') || mimeType.includes('yml'))
+    return 'yaml';
 }
 
-function highlighterToMode(highlighter: CodeMirrorHighlighter | undefined): string | undefined {
+export function highlighterToMode(highlighter: CodeMirrorHighlighter | undefined): string | undefined {
   if (!highlighter)
     return;
   return {

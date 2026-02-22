@@ -19,6 +19,53 @@ import { test as it, expect } from './pageTest';
 
 it.skip(({ isAndroid }) => isAndroid);
 
+
+// TODO remove; just a demo test
+it('table matches aria snapshot', async ({ page }) => {
+  // Set up a sample table with headers and data
+  await page.setContent(`
+    <table>
+      <caption>Employee Directory</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice Johnson</td>
+          <td>Engineer</td>
+          <td>Development</td>
+        </tr>
+        <tr>
+          <td>Bob Smith</td>
+          <td>Designer</td>
+          <td>UI</td>
+        </tr>
+        <tr>
+          <td>Carol White</td>
+          <td>Manager</td>
+          <td>Operations</td>
+        </tr>
+      </tbody>
+    </table>
+  `);
+
+  // Verify the table structure using toMatchAriaSnapshot
+  await expect(page.getByRole('table')).toMatchAriaSnapshot(`
+    - table "Employee Directory":
+      - rowgroup:
+        - row "Name Role Department"
+      - rowgroup:
+        - /children: equal
+        - row "Alice Johnson Engineer Development"
+        - row "Bob Smith Designer UX"
+        - row "Carol White Manager Operations"
+  `);
+});
+
 it('should work', async ({ page, server, browserName, headless, isLinux }) => {
   await page.setViewportSize({ width: 500, height: 500 });
   await page.goto(server.PREFIX + '/grid.html');

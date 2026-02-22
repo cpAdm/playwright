@@ -59,6 +59,10 @@ export type ErrorDescription = {
   action?: ActionTraceEventInContext;
   stack?: StackFrame[];
   message: string;
+  matcherResult?: {
+    actual: string,
+    expected: string,
+  }
 };
 
 export type Attachment = trace.AfterActionTraceEventAttachment & { callId: string };
@@ -180,6 +184,7 @@ export class TraceModel {
     return this.errors.filter(e => !!e.message).map((error, i) => ({
       stack: error.stack,
       message: error.message,
+      matcherResult: error.matcherResult,
     }));
   }
 }

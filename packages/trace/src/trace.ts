@@ -163,6 +163,10 @@ export type ErrorTraceEvent = {
   type: 'error';
   message: string;
   stack?: StackFrame[];
+  matcherResult?: {
+    actual: string,
+    expected: string,
+  }
 };
 
 export type TraceEvent =

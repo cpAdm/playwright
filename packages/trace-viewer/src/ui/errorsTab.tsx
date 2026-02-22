@@ -28,6 +28,8 @@ import { MetadataWithCommitInfo } from '@testIsomorphic/types';
 import { calculateSha1 } from './sourceTab';
 import type { StackFrame } from '@protocol/channels';
 import { useTraceModel } from './traceModelContext';
+import { CodeMirrorMergeWrapper } from '@web/components/codeMirrorMergeWrapper';
+import { ToolbarButton } from '@web/components/toolbarButton';
 
 const CopyPromptButton: React.FC<{ prompt: string }> = ({ prompt }) => {
   return (
@@ -56,6 +58,7 @@ export function useErrorsTabModel(model: TraceModel | undefined): ErrorsTabModel
 }
 
 function ErrorView({ message, error, sdkLanguage, revealInSource }: { message: string, error: ErrorDescription, sdkLanguage: Language, revealInSource: (error: ErrorDescription) => void }) {
+  const [showMergeView, setShowMergeView] = React.useState(false);
   let location: string | undefined;
   let longLocation: string | undefined;
   const stackFrame = error.stack?.[0];
@@ -80,7 +83,19 @@ function ErrorView({ message, error, sdkLanguage, revealInSource }: { message: s
       </div>}
     </div>
 
-    <ErrorMessage error={message} />
+    {error.matcherResult &&
+      <ToolbarButton onClick={() => setShowMergeView(merge => !merge)} style={{ margin: '5px 10px', width: 'fit-content', flex: 0, backgroundColor: 'var(--vscode-editor-inactiveSelectionBackground)' }}>
+        {showMergeView ? 'Show inline diff' : 'Show side-by-side diff'}
+      </ToolbarButton>
+    }
+    {/* TODO also determine highlighter by trace model? */}
+    {showMergeView ?
+      <CodeMirrorMergeWrapper
+        original={JSON.parse(error.matcherResult!.actual)}
+        changed={JSON.parse(error.matcherResult!.expected)}
+        highlighter='yaml'
+        readOnly={true}
+      /> : <ErrorMessage error={message}/>}
   </div>;
 }
 
